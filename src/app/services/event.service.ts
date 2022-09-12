@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class EventService {
-  private url = 'http://localhost:8080/events';
+  private url = '/api/events';
 
   constructor(private httpClient: HttpClient) { }
 
