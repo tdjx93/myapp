@@ -29,18 +29,22 @@
   .users-table {
     width: 100%;
   }
-.events-table-th {
-  background-color: lightblue;
-}
-.events-table-td{
-  background-color: lightcyan;
-}
-.users-table-th {
-  background-color: darkgray;
-}
-.users-table-td {
-  background-color: indianred;
-}
+
+  .events-table-th {
+    background-color: lightblue;
+  }
+
+  .events-table-td {
+    background-color: lightcyan;
+  }
+
+  .users-table-th {
+    background-color: darkgray;
+  }
+
+  .users-table-td {
+    background-color: indianred;
+  }
 
   .events-table,
   .events-table-th,
@@ -58,33 +62,15 @@
 
 <div class="content" role="main">
 
-  <table class="events-table">
-    <thead>
-    <th class="events-table-th">Index</th>
-    <th class="events-table-th">Name</th>
-    <th class="events-table-th">Topic</th>
-    </thead>
-    <tbody>
-    <tr *ngFor="let event of events">
-      <td class="events-table-td">{{event.id}}.</td>
-      <td class="events-table-td">{{event.name}}</td>
-      <td class="events-table-td">{{event.topic}}</td>
-    </tr>
-    </tbody>
-  </table>
-
-  <br>
-
   <table class="users-table">
     <thead>
     <th class="users-table-th">Id</th>
     <th class="users-table-th">Username</th>
     </thead>
     <tbody>
-    <tr *ngFor="let user of users; let even = even; let odd = odd"
-    [ngClass]="{odd: odd, even: even}">
-      <td class="users-table-td">{{user.id}}.</td>
-      <td class="users-table-td">{{user.name}}</td>
+    <tr *ngFor="let event of events">
+      <td class="users-table-td">{{event.id}}.</td>
+      <td class="users-table-td">{{event.name}}</td>
     </tr>
     </tbody>
   </table>
