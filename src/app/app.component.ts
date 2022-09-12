@@ -1,5 +1,7 @@
 import {Component} from '@angular/core';
 import {EventService} from "./services/event.service";
+import {ArticleService} from "./services/article.service";
+import {BookService} from "./services/book.service";
 
 @Component({
   selector: 'app-root',
@@ -8,15 +10,23 @@ import {EventService} from "./services/event.service";
 })
 export class AppComponent {
   events: any;
+  articles: any;
+  books: any;
 
-  constructor(private service: EventService) {
+  constructor(private eventService: EventService,
+              private articleService: ArticleService,
+              private bookService: BookService) {
   }
 
   ngOnInit() {
-    this.service.getEvents()
+    this.eventService.getEvents()
       .subscribe(response => {
         this.events = response;
       });
+    this.articleService.getArticles()
+      .subscribe(response => this.articles = response)
+    this.bookService.getBooks()
+      .subscribe(response => this.books = response)
   }
 }
 

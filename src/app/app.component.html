@@ -1,78 +1,62 @@
-<style>
-  h1 {
-    margin: 8px 0;
-  }
-
-  .toolbar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    background-color: #4fc20a;
-    color: #e80a0a;
-    font-weight: 600;
-  }
-
-  .content {
-    display: flex;
-    margin: 82px auto 32px;
-    padding: 0 16px;
-    max-width: 960px;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .events-table,
-  .users-table {
-    width: 100%;
-  }
-
-  .events-table-th {
-    background-color: lightblue;
-  }
-
-  .events-table-td {
-    background-color: lightcyan;
-  }
-
-  .users-table-th {
-    background-color: darkgray;
-  }
-
-  .users-table-td {
-    background-color: indianred;
-  }
-
-  .events-table,
-  .events-table-th,
-  .events-table-td,
-  .users-table,
-  .users-table-th,
-  .users-table-td {
-    border: 1px solid black;
-  }
-</style>
-
 <div class="toolbar" role="banner">
   <span>Welcome to MyApp</span>
 </div>
 
 <div class="content" role="main">
 
-  <table class="users-table">
+  <table class="table">
     <thead>
-    <th class="users-table-th">Id</th>
-    <th class="users-table-th">Username</th>
+    <th class="table-th">Id</th>
+    <th class="table-th">Name</th>
+    <th class="table-th">Topic</th>
     </thead>
     <tbody>
     <tr *ngFor="let event of events">
-      <td class="users-table-td">{{event.id}}.</td>
-      <td class="users-table-td">{{event.name}}</td>
+      <td class="table-td">{{event.id}}.</td>
+      <td class="table-td">{{event.name}}</td>
+      <td class="table-td">{{event.topic}}</td>
     </tr>
     </tbody>
   </table>
+
+  <br>
+
+<table class="table">
+  <thead>
+<th class="table-th">Id</th>
+<th class="table-th">Title</th>
+<th class="table-th">Topic</th>
+<th class="table-th">Author</th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let article of articles">
+    <td class="table-td">{{article.id}}</td>
+    <td class="table-td">{{article.title}}</td>
+    <td class="table-td">{{article.topic}}</td>
+    <td class="table-td">{{article.author}}</td>
+  </tr>
+  </tbody>
+</table>
+
+  <br>
+
+  <table class="table">
+    <thead>
+    <th class="table-th">ID</th>
+    <th class="table-th">Tytuł</th>
+    <th class="table-th">Autor</th>
+    <th class="table-th">ISBN</th>
+    </thead>
+    <tbody>
+    <tr *ngFor="let book of books">
+      <td class="table-td">{{book.id}}</td>
+      <td class="table-td">{{book.title}}</td>
+      <td class="table-td">{{book.author}}</td>
+      <td class="table-td">{{book.isbn}}</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <br>
 
 </div>
