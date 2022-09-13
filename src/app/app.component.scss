@@ -19,7 +19,19 @@ h1 {
   display: flex;
   margin: 82px auto 32px;
   padding: 0 16px;
-  max-width: 960px;
   flex-direction: column;
   align-items: center;
+}
+
+.container {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sidebar {
+  padding: 0 20px;
+  position: fixed;
+  left: 20px;
+  top: 100px;
 }
