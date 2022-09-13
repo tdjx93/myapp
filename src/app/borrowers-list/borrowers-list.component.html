@@ -10,7 +10,7 @@
   <tr *ngFor="let borrower of borrowers">
     <td class="table-td">{{borrower.id}}</td>
     <td class="table-td">{{borrower.firstName}} {{borrower.lastName}}</td>
-    <td class="table-td"><a routerLink="/borrower/{{borrower.id}}/history">see history</a></td>
+    <td class="table-td"><a routerLink="/borrowers/{{borrower.id}}/history">see history</a></td>
   </tr>
   </tbody>
 </table>

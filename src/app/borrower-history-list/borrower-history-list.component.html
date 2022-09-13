@@ -1,16 +1,14 @@
 <table class="table">
   <thead>
-  <th class="table-th">Book ID</th>
-  <th class="table-th">Book name</th>
+  <th class="table-th">Book Title</th>
   <th class="table-th">Borrow date</th>
-  <th class="table-th">Return date</th>
+  <th class="table-th">Is returned</th>
   </thead>
   <tbody>
 <tr *ngFor="let historyItem of history">
-  <td class="table-td">{{historyItem.bookId}}</td>
-  <td class="table-td">{{historyItem.bookName}}</td>
+  <td class="table-td">{{historyItem.bookTitle}}</td>
   <td class="table-td">{{historyItem.borrowDate}}</td>
-  <td class="table-td">{{historyItem.returnDate}}</td>
+  <td class="table-td">{{historyItem.returned}}</td>
 </tr>
   </tbody>
 </table>
