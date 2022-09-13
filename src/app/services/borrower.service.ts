@@ -13,4 +13,8 @@ export class BorrowerService {
   getBorrowers() {
     return this.httpClient.get(this.url);
   }
+
+  addBorrower(borrowerData: any) {
+    return this.httpClient.post(this.url, borrowerData);
+  }
 }

@@ -1,0 +1,18 @@
+<form (ngSubmit)="saveBorrower()">
+  <div class="form-block">
+    <label class="label" for="firstName">First name</label>
+    <input class="input" type="text" id="firstName" placeholder="first name here"
+           [(ngModel)]="form.firstName" [ngModelOptions]="{standalone: true}"
+    >
+  </div>
+
+  <div class="form-block">
+    <label class="label" for="lastName">Last name</label>
+    <input class="input" type="text" id="lastName" placeholder="last name here"
+           [(ngModel)]="form.lastName" [ngModelOptions]="{standalone: true}"
+    >
+  </div>
+
+  <button type="submit">Add Borrower</button>
+</form>
+
