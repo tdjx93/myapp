@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {BookService} from "../services/book.service";
 
 @Component({
   selector: 'app-new-book',
@@ -6,10 +7,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./new-book.component.scss']
 })
 export class NewBookComponent implements OnInit {
+  form = {
+    title: '',
+    author: '',
+    isbn: ''
+  };
 
-  constructor() { }
+  constructor(private bookService: BookService) {
+  }
+
+  saveBook(): void {
+    this.bookService
+      .createBook(this.form)
+      .subscribe(res => {
+        console.log('Book created');
+      })
+  }
 
   ngOnInit(): void {
   }
-
 }

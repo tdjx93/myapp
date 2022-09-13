@@ -12,4 +12,8 @@ export class BookService {
   getBooks(){
     return this.httpClient.get(this.url);
   }
+
+  createBook(bookData: any) {
+    return this.httpClient.post(this.url, bookData);
+  }
 }
