@@ -1,0 +1,12 @@
+<table class="table">
+  <thead>
+  <th class="table-th">ID</th>
+  <th class="table-th">Name</th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let borrower of borrowers">
+    <td class="table-td">{{borrower.id}}</td>
+    <td class="table-td">{{borrower.firstName}} {{borrower.lastName}}</td>
+  </tr>
+  </tbody>
+</table>
