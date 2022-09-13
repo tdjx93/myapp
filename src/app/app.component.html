@@ -2,61 +2,7 @@
   <span>Welcome to MyApp</span>
 </div>
 
+
 <div class="content" role="main">
-
-  <table class="table">
-    <thead>
-    <th class="table-th">Id</th>
-    <th class="table-th">Name</th>
-    <th class="table-th">Topic</th>
-    </thead>
-    <tbody>
-    <tr *ngFor="let event of events">
-      <td class="table-td">{{event.id}}.</td>
-      <td class="table-td">{{event.name}}</td>
-      <td class="table-td">{{event.topic}}</td>
-    </tr>
-    </tbody>
-  </table>
-
-  <br>
-
-<table class="table">
-  <thead>
-<th class="table-th">Id</th>
-<th class="table-th">Title</th>
-<th class="table-th">Topic</th>
-<th class="table-th">Author</th>
-  </thead>
-  <tbody>
-  <tr *ngFor="let article of articles">
-    <td class="table-td">{{article.id}}</td>
-    <td class="table-td">{{article.title}}</td>
-    <td class="table-td">{{article.topic}}</td>
-    <td class="table-td">{{article.author}}</td>
-  </tr>
-  </tbody>
-</table>
-
-  <br>
-
-  <table class="table">
-    <thead>
-    <th class="table-th">ID</th>
-    <th class="table-th">Tytuł</th>
-    <th class="table-th">Autor</th>
-    <th class="table-th">ISBN</th>
-    </thead>
-    <tbody>
-    <tr *ngFor="let book of books">
-      <td class="table-td">{{book.id}}</td>
-      <td class="table-td">{{book.title}}</td>
-      <td class="table-td">{{book.author}}</td>
-      <td class="table-td">{{book.isbn}}</td>
-    </tr>
-    </tbody>
-  </table>
-
-  <br>
-
+  <router-outlet></router-outlet>
 </div>
