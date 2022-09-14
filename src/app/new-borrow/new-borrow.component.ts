@@ -12,8 +12,8 @@ export class NewBorrowComponent implements OnInit {
   borrowers: any;
   books: any;
   form = {
-    bookId: '',
-    borrowerId: ''
+    bookId: null,
+    borrowerId: null
   };
 
 
@@ -34,5 +34,4 @@ export class NewBorrowComponent implements OnInit {
     this.bookService.getBooks()
       .subscribe(response => this.books = response)
   }
-
 }
