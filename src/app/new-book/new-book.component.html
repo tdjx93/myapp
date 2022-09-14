@@ -35,6 +35,19 @@
     >
   </div>
 
+<div class="form-block">
+  <label class="label">Category:</label>
+  <select
+  class="select"
+  [(ngModel)]="form.category"
+  [ngModelOptions]="{standalone: true}"
+  >
+    <option *ngFor="let category of categories" [ngValue]="category.name">
+      {{category.name}}
+    </option>
+  </select>
+</div>
+
 
   <button type="submit">AddBook</button>
 </form>

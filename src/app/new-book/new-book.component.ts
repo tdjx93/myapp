@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {BookService} from "../services/book.service";
+import {CategoryService} from "../services/category.service";
 
 @Component({
   selector: 'app-new-book',
@@ -7,13 +8,16 @@ import {BookService} from "../services/book.service";
   styleUrls: ['./new-book.component.scss']
 })
 export class NewBookComponent implements OnInit {
+  categories: any;
   form = {
     title: '',
     author: '',
-    isbn: ''
+    isbn: '',
+    category: '',
   };
 
-  constructor(private bookService: BookService) {
+  constructor(private bookService: BookService,
+              private categoryService: CategoryService) {
   }
 
   saveBook(): void {
@@ -25,5 +29,7 @@ export class NewBookComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.categoryService.getCategories()
+      .subscribe(response => this.categories = response)
   }
 }

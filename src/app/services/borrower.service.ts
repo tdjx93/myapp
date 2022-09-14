@@ -5,7 +5,7 @@ import {HttpClient} from "@angular/common/http";
   providedIn: 'root'
 })
 export class BorrowerService {
-  private url = '/api/borrowers'
+  private url = '/api/borr  owers'
 
   constructor(private httpClient: HttpClient) {
   }

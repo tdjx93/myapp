@@ -1,0 +1,10 @@
+<form (ngSubmit)="saveCategory()">
+  <div class="form-block">
+    <label class="label" for="name">Name</label>
+    <input class="input" type="text" id="name" placeholder="name here"
+           [(ngModel)]="form.name" [ngModelOptions]="{standalone: true}"
+    >
+  </div>
+  <button type="submit">Add Borrower</button>
+</form>
+
