@@ -1,0 +1,21 @@
+<h1>Save new Borrow</h1>
+<form (ngSubmit)="saveBorrow()">
+  <select [(ngModel)]="form.bookId"
+          [ngModelOptions]="{standalone: true}"
+  >
+    <option value="Select book"></option>
+    <option *ngFor="let book of books">
+      {{book.title}}
+    </option>
+  </select>
+
+  <select [(ngModel)]="form.borrowerId"
+          [ngModelOptions]="{standalone: true}"
+  >
+  <option value="Select borrower"></option>
+  <option *ngFor="let borrower of borrowers">
+    {{borrower.lastName}} {{borrower.firstName}}
+  </option>
+  </select>
+  <button type="submit">Save borrow</button>
+</form>

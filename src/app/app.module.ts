@@ -10,6 +10,7 @@ import { BorrowersListComponent } from './borrowers-list/borrowers-list.componen
 import { NewBookComponent } from './new-book/new-book.component';
 import { NewBorrowerComponent } from './new-borrower/new-borrower.component';
 import { BorrowerHistoryListComponent } from './borrower-history-list/borrower-history-list.component';
+import { NewBorrowComponent } from './new-borrow/new-borrow.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { BorrowerHistoryListComponent } from './borrower-history-list/borrower-h
     BorrowersListComponent,
     NewBookComponent,
     NewBorrowerComponent,
-    BorrowerHistoryListComponent
+    BorrowerHistoryListComponent,
+    NewBorrowComponent
   ],
   imports: [
     BrowserModule,

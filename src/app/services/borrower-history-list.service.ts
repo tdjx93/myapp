@@ -5,7 +5,6 @@ import {HttpClient} from "@angular/common/http";
   providedIn: 'root'
 })
 export class BorrowerHistoryListService {
-  private url ='/api/borrowers/{id}/borrow_history'
 
   constructor(private httpClient: HttpClient) {
   }
