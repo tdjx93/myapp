@@ -9,6 +9,7 @@ import {NewBorrowComponent} from "./new-borrow/new-borrow.component";
 import {CategoriesListComponent} from "./categories-list/categories-list.component";
 import {NewCategoryComponent} from "./new-category/new-category.component";
 import {ReturnBookComponent} from "./return-book/return-book.component";
+import {AvailableBooksListComponent} from "./available-books-list/available-books-list.component";
 
 const routes: Routes = [
   {path: 'books', component: BooksListComponent},
@@ -20,6 +21,7 @@ const routes: Routes = [
   {path: 'return-book', component: ReturnBookComponent},
   {path: 'categories', component: CategoriesListComponent},
   {path: 'new-category', component: NewCategoryComponent},
+  {path: 'books-available', component: AvailableBooksListComponent},
 ];
 
 @NgModule({

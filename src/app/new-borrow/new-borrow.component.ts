@@ -31,7 +31,7 @@ export class NewBorrowComponent implements OnInit {
   ngOnInit(): void {
     this.borrowersService.getBorrowers()
       .subscribe(response => this.borrowers = response)
-    this.bookService.getBooks()
+    this.bookService.getAvailableBooks()
       .subscribe(response => this.books = response)
   }
 }

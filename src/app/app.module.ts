@@ -14,6 +14,8 @@ import { NewBorrowComponent } from './new-borrow/new-borrow.component';
 import { CategoriesListComponent } from './categories-list/categories-list.component';
 import { NewCategoryComponent } from './new-category/new-category.component';
 import { ReturnBookComponent } from './return-book/return-book.component';
+import { AvailableBooksListComponent } from './available-books-list/available-books-list.component';
+import { BooksListByCategoryComponent } from './books-list-by-category/books-list-by-category.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { ReturnBookComponent } from './return-book/return-book.component';
     NewBorrowComponent,
     CategoriesListComponent,
     NewCategoryComponent,
-    ReturnBookComponent
+    ReturnBookComponent,
+    AvailableBooksListComponent,
+    BooksListByCategoryComponent
   ],
   imports: [
     BrowserModule,

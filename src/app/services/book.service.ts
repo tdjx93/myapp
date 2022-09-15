@@ -13,6 +13,10 @@ export class BookService {
     return this.httpClient.get(this.url);
   }
 
+  getAvailableBooks(){
+    return this.httpClient.get('/api/books-available');
+  }
+
   createBook(bookData: any) {
     return this.httpClient.post(this.url, bookData);
   }
