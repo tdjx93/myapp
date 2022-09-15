@@ -4,15 +4,16 @@ h1 {
 
 .toolbar {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 2px;
+  left: 5px;
+  right: 5px;
   height: 60px;
   display: flex;
   align-items: center;
-  background-color: #4fc20a;
-  color: #e80a0a;
+  background-color: gold;
+  color: black;
   font-weight: 600;
+  padding: 5px 10px;
 }
 
 .content {
@@ -27,6 +28,7 @@ h1 {
   max-width: 960px;
   margin-left: auto;
   margin-right: auto;
+  background-color: #50d7b0;
 }
 
 .sidebar {
@@ -34,4 +36,7 @@ h1 {
   position: fixed;
   left: 20px;
   top: 100px;
+  background-color: #379a00;
+  border: 2px solid black;
+
 }
