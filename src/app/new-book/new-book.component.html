@@ -39,7 +39,7 @@
   <label class="label">Category:</label>
   <select
   class="select"
-  [(ngModel)]="form.category"
+  [(ngModel)]="form.bookCategoryName"
   [ngModelOptions]="{standalone: true}"
   >
     <option *ngFor="let category of categories" [ngValue]="category.name">

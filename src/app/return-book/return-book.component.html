@@ -1,0 +1,39 @@
+<h1>Return book</h1>
+
+<h5>(Naprawić, aby lista ksiązek wyświetlała książki wypożyczone przez wwybranego
+  borrowera) </h5>
+
+<form (ngSubmit)="returnBook()">
+
+  <div class="form-block">
+    <label class="label">Select borrower:</label>
+    <select
+      class="select"
+      [(ngModel)]="form.borrowerId"
+      [ngModelOptions]="{standalone: true}"
+    >
+      <option disabled selected> -- BORROWER -- </option>
+      <option *ngFor="let borrower of borrowers" [ngValue]="borrower.id">
+        {{borrower.firstName}} {{borrower.lastName}}
+      </option>
+    </select>
+  </div>
+
+  <div>
+  <div class="form-block">
+    <label class="label">Select book:</label>
+    <select
+      class="select"
+      [(ngModel)]="form.bookId"
+      [ngModelOptions]="{standalone: true}"
+    >
+      <option disabled selected> -- BOOK TITLE -- </option>
+      <option *ngFor="let borrow of activeBorrows" [ngValue]="borrow.bookId">
+        ID: {{borrow.id}} - {{borrow.bookTitle}}
+      </option>
+    </select>
+  </div>
+
+    <button type="submit">Return selected book</button>
+  </div>
+</form>

@@ -13,7 +13,7 @@ export class NewBookComponent implements OnInit {
     title: '',
     author: '',
     isbn: '',
-    category: '',
+    bookCategoryName: '',
   };
 
   constructor(private bookService: BookService,
