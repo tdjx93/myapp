@@ -16,6 +16,8 @@ import { NewCategoryComponent } from './new-category/new-category.component';
 import { ReturnBookComponent } from './return-book/return-book.component';
 import { AvailableBooksListComponent } from './available-books-list/available-books-list.component';
 import { BooksListByCategoryComponent } from './books-list-by-category/books-list-by-category.component';
+import { AuthorsListComponent } from './authors-list/authors-list.component';
+import { NewAuthorComponent } from './new-author/new-author.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { BooksListByCategoryComponent } from './books-list-by-category/books-lis
     NewCategoryComponent,
     ReturnBookComponent,
     AvailableBooksListComponent,
-    BooksListByCategoryComponent
+    BooksListByCategoryComponent,
+    AuthorsListComponent,
+    NewAuthorComponent
   ],
   imports: [
     BrowserModule,

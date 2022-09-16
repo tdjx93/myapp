@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {CategoryService} from "../services/category.service";
 
 @Component({
@@ -8,10 +8,11 @@ import {CategoryService} from "../services/category.service";
 })
 export class NewCategoryComponent implements OnInit {
   form = {
-    name : ''
+    name: ''
   };
 
-  constructor(private categoryService: CategoryService) { }
+  constructor(private categoryService: CategoryService) {
+  }
 
   saveCategory(): void {
     this.categoryService

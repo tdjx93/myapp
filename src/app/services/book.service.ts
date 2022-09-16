@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -7,14 +7,19 @@ import { HttpClient } from '@angular/common/http';
 export class BookService {
   private url = '/api/books';
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {
+  }
 
-  getBooks(){
+  getBooks() {
     return this.httpClient.get(this.url);
   }
 
-  getAvailableBooks(){
+  getAvailableBooks() {
     return this.httpClient.get('/api/books-available');
+  }
+
+  getBooksByPage(page: any) {
+    return this.httpClient.get('api/books/page?page=' + page)
   }
 
   createBook(bookData: any) {

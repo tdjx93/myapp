@@ -24,4 +24,3 @@ export class AppComponent {
     //   .subscribe(response => this.borrowers = response)
   }
 }
-

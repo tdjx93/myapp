@@ -10,7 +10,8 @@ import {ActivatedRoute} from "@angular/router";
 export class BorrowerHistoryListComponent implements OnInit {
 history: any;
 
-  constructor(private borrowerHistoryListService: BorrowerHistoryListService, private route: ActivatedRoute) { }
+  constructor(private borrowerHistoryListService: BorrowerHistoryListService,
+              private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {

@@ -1,6 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import {EventService} from "../services/event.service";
-import {ArticleService} from "../services/article.service";
+import {Component, OnInit} from '@angular/core';
 import {BookService} from "../services/book.service";
 
 @Component({
@@ -11,9 +9,7 @@ import {BookService} from "../services/book.service";
 export class BooksListComponent implements OnInit {
   books: any;
 
-  constructor(private eventService: EventService,
-              private articleService: ArticleService,
-              private bookService: BookService) {
+  constructor(private bookService: BookService) {
   }
 
   ngOnInit() {
