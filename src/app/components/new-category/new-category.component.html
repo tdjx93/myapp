@@ -4,6 +4,9 @@
     <input class="input" type="text" id="name" placeholder="name here"
            [(ngModel)]="form.name" [ngModelOptions]="{standalone: true}"
     >
+    <div *ngIf="errors && errors.name" class="field-error">
+      {{ errors.name }}
+    </div>
   </div>
   <button type="submit">Add category</button>
 </form>

@@ -10,6 +10,7 @@ export class NewCategoryComponent implements OnInit {
   form = {
     name: ''
   };
+  errors: any
 
   constructor(private categoryService: CategoryService) {
   }
@@ -17,7 +18,15 @@ export class NewCategoryComponent implements OnInit {
   saveCategory(): void {
     this.categoryService
       .addCategory(this.form)
-      .subscribe(result => console.log('Category added'))
+      .subscribe(
+        result => console.log('Category added'),
+        response => {
+          this.errors = {};
+          for (const error of response.error) {
+            this.errors[error.field] = error.message;
+          }
+        }
+      )
   }
 
   ngOnInit(): void {
