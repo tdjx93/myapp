@@ -8,7 +8,7 @@
   <th class="table-th">Available</th>
   </thead>
   <tbody>
-  <tr *ngFor="let book of books">
+  <tr *ngFor="let book of filteredBooks">
     <td class="table-td">{{book.id}}</td>
     <td class="table-td">{{book.title}}</td>
     <td class="table-td">{{book.author}}</td>
@@ -20,8 +20,13 @@
 </table>
 
 <div>
-  <h4>Liczba książek: ({{books?.length}})</h4>
+  <h4>Liczba książek: ({{filteredBooks?.length}})</h4>
 </div>
 
 <button><a routerLink="/new-book">Add Book</a></button>
-<button><a routerLink="/books">Show only available Books</a></button>
+<button
+  (click)="showOnlyAvailable = !showOnlyAvailable"
+  [ngClass]="showOnlyAvailable ? 'active' : ''"
+>
+  Show only available Books
+</button>

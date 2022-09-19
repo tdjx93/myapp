@@ -8,8 +8,18 @@ import {BookService} from "../../services/book.service";
 })
 export class BooksListComponent implements OnInit {
   books: any;
+  showOnlyAvailable: boolean
 
   constructor(private bookService: BookService) {
+    this.showOnlyAvailable = false
+  }
+
+  get filteredBooks() {
+    if (!this.showOnlyAvailable) {
+      return this.books;
+    } else {
+      return this.books.filter(book => book.availabilityStatus === true)
+    }
   }
 
   ngOnInit() {

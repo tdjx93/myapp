@@ -2,20 +2,17 @@
   <label class="label">Category:</label>
   <select
     class="select"
+    [(ngModel)]="selectedCategoryId"
+    [ngModelOptions]="{standalone: true}"
+    (change)="loadBooks()"
   >
     <option disabled selected> - - WYBIERZ KATEGORIĘ - - </option>
-    <option *ngFor="let category of categories" [ngValue]="category.name">
+    <option *ngFor="let category of categories" [ngValue]="category.id">
       {{category.name}}
     </option>
 
   </select>
   <label>( #TODO )</label>
-
-  <ul>
-    <li *ngFor="let category of categories">
-      <a routerLink="/books-by-category/{{category.id}}">{{category.name}}</a>
-    </li>
-  </ul>
 </div>
 
 <table class="table">
