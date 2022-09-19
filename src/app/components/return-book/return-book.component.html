@@ -12,27 +12,34 @@
       [(ngModel)]="form.borrowerId"
       [ngModelOptions]="{standalone: true}"
     >
-      <option disabled selected> -- BORROWER -- </option>
+      <option disabled selected> -- BORROWER --</option>
       <option *ngFor="let borrower of borrowers" [ngValue]="borrower.id">
         {{borrower.firstName}} {{borrower.lastName}}
       </option>
     </select>
+    <div *ngIf="errors && errors.borrowerId" class="field-error">
+      {{ errors.borrowerId }}
+    </div>
   </div>
 
   <div>
-  <div class="form-block">
-    <label class="label">Select book:</label>
-    <select
-      class="select"
-      [(ngModel)]="form.bookId"
-      [ngModelOptions]="{standalone: true}"
-    >
-      <option disabled selected> -- BOOK TITLE -- </option>
-      <option *ngFor="let borrow of activeBorrows" [ngValue]="borrow.bookId">
-        ID: {{borrow.id}} - {{borrow.bookTitle}}
-      </option>
-    </select>
-  </div>
+    <div class="form-block">
+      <label class="label">Select book:</label>
+      <select
+        class="select"
+        [(ngModel)]="form.bookId"
+        [ngModelOptions]="{standalone: true}"
+      >
+        <option disabled selected> -- BOOK TITLE --</option>
+        <option *ngFor="let borrow of activeBorrows" [ngValue]="borrow.bookId">
+          ID: {{borrow.id}} - {{borrow.bookTitle}}
+        </option>
+      </select>
+
+      <div *ngIf="errors && errors.bookId" class="field-error">
+        {{ errors.bookId }}
+      </div>
+    </div>
 
     <button type="submit">Return selected book</button>
   </div>

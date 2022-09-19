@@ -9,6 +9,9 @@
       [(ngModel)]="form.title"
       [ngModelOptions]="{standalone: true}"
     >
+    <div *ngIf="errors && errors.title" class="field-error">
+      {{ errors.title }}
+    </div>
   </div>
 
   <div class="form-block">
@@ -23,6 +26,9 @@
         {{author.fullName}}
       </option>
     </select>
+    <div *ngIf="errors && errors.authorFullName" class="field-error">
+      {{ errors.authorFullName}}
+    </div>
   </div>
 
   <div class="form-block">
@@ -35,6 +41,9 @@
       [(ngModel)]="form.isbn"
       [ngModelOptions]="{standalone: true}"
     >
+    <div *ngIf="errors && errors.isbn" class="field-error">
+      {{ errors.isbn}}
+    </div>
   </div>
 
   <div class="form-block">
@@ -49,6 +58,9 @@
         {{category.name}}
       </option>
     </select>
+    <div *ngIf="errors && errors.bookCategoryName" class="field-error">
+      {{ errors.bookCategoryName}}
+    </div>
   </div>
 
 

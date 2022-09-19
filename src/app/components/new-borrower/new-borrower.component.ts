@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {BorrowerService} from "../../services/borrower.service";
 
 @Component({
@@ -11,13 +11,23 @@ export class NewBorrowerComponent implements OnInit {
     firstName: '',
     lastName: ''
   };
+  errors: any
 
-  constructor(private borrowerService: BorrowerService) { }
+  constructor(private borrowerService: BorrowerService) {
+  }
 
   saveBorrower(): void {
     this.borrowerService
       .addBorrower(this.form)
-      .subscribe(result => console.log('Borrower added'))
+      .subscribe(
+        result => console.log('Borrower added'),
+        response => {
+          this.errors = {};
+          for (const error of response.error) {
+            this.errors[error.field] = error.message;
+          }
+        }
+      )
   }
 
   ngOnInit(): void {

@@ -14,6 +14,7 @@ export class ReturnBookComponent implements OnInit {
     bookId: null,
     borrowerId: null
   }
+  errors: any
 
   constructor(private borrowService: BorrowService,
               private borrowersService: BorrowerService) {
@@ -28,7 +29,15 @@ export class ReturnBookComponent implements OnInit {
 
   returnBook(): void {
     this.borrowService.returnBook(this.form)
-      .subscribe(response => console.log("Book returned"))
+      .subscribe(
+        result => console.log("Book returned"),
+        response => {
+          this.errors = {};
+          for (const error of response.error) {
+            this.errors[error.field] = error.message;
+          }
+        }
+      )
 
   }
 }

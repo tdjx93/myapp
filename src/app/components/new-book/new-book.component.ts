@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {BookService} from "../../services/book.service";
 import {CategoryService} from "../../services/category.service";
 import {AuthorService} from "../../services/author.service";
@@ -17,6 +17,7 @@ export class NewBookComponent implements OnInit {
     isbn: '',
     bookCategoryName: '',
   };
+  errors: any
 
   constructor(private bookService: BookService,
               private categoryService: CategoryService,
@@ -26,9 +27,15 @@ export class NewBookComponent implements OnInit {
   saveBook(): void {
     this.bookService
       .createBook(this.form)
-      .subscribe(res => {
-        console.log('Book created');
-      })
+      .subscribe(
+        result => console.log('Book created'),
+        response => {
+          this.errors = {};
+          for (const error of response.error) {
+            this.errors[error.field] = error.message;
+          }
+        }
+      )
   }
 
   ngOnInit(): void {
