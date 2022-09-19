@@ -1,0 +1,56 @@
+<form (ngSubmit)="saveBook()">
+  <div class="form-block">
+    <label class="label" for="title">Title:</label>
+    <input
+      class="input"
+      type="text"
+      id="title"
+      placeholder="title here"
+      [(ngModel)]="form.title"
+      [ngModelOptions]="{standalone: true}"
+    >
+  </div>
+
+  <div class="form-block">
+    <label class="label">Author:</label>
+    <select
+      class="select"
+      [(ngModel)]="form.authorFullName"
+      [ngModelOptions]="{standalone: true}"
+    >
+      <option disabled selected> - - AUTHOR FULL NAME - -</option>
+      <option *ngFor="let author of authors" [ngValue]="author.fullName">
+        {{author.fullName}}
+      </option>
+    </select>
+  </div>
+
+  <div class="form-block">
+    <label class="label" for="isbn">ISBN:</label>
+    <input
+      class="input"
+      type="text"
+      id="isbn"
+      placeholder="ISBN here"
+      [(ngModel)]="form.isbn"
+      [ngModelOptions]="{standalone: true}"
+    >
+  </div>
+
+  <div class="form-block">
+    <label class="label">Category:</label>
+    <select
+      class="select"
+      [(ngModel)]="form.bookCategoryName"
+      [ngModelOptions]="{standalone: true}"
+    >
+      <option selected disabled> - - CATEGORY NAME - -</option>
+      <option *ngFor="let category of categories" [ngValue]="category.name">
+        {{category.name}}
+      </option>
+    </select>
+  </div>
+
+
+  <button type="submit">AddBook</button>
+</form>

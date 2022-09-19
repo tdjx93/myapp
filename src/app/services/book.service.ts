@@ -18,6 +18,10 @@ export class BookService {
     return this.httpClient.get('/api/books-available');
   }
 
+  getBooksByCategory(category: any) {
+    return this.httpClient.get('/api/books-by-category/' + category)
+  }
+
   getBooksByPage(page: any) {
     return this.httpClient.get('api/books/page?page=' + page)
   }

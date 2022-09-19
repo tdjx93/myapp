@@ -1,0 +1,23 @@
+<h2>History of borrows: {{borrower?.firstName}} {{borrower?.lastName}}</h2>
+
+<table class="table">
+  <thead>
+  <th class="table-th">Book title</th>
+  <th class="table-th">Book author</th>
+  <th class="table-th">Borrow date</th>
+  <th class="table-th">Is returned</th>
+  </thead>
+  <tbody>
+<tr *ngFor="let historyItem of history">
+  <td class="table-td">{{historyItem.bookTitle}}</td>
+  <td class="table-td">{{historyItem.author}}</td>
+  <td class="table-td">{{historyItem.borrowDate}}</td>
+  <td class="table-td">{{historyItem.returned}}</td>
+</tr>
+  </tbody>
+</table>
+
+<div>
+  <h4>Liczba wypożyczeń: ({{history?.length}})</h4>
+  <h4>Liczba nie oddanych wypożyczeń: ( #TODO )</h4>
+</div>

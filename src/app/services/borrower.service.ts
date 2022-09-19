@@ -14,7 +14,16 @@ export class BorrowerService {
     return this.httpClient.get(this.url);
   }
 
+  getBorrowerById(id: any) {
+    return this.httpClient.get(this.url + '/' + id)
+  }
+
   addBorrower(borrowerData: any) {
     return this.httpClient.post(this.url, borrowerData);
   }
+
+  getHistory(id: any) {
+    return this.httpClient.get('/api/borrowers/' + id +'/borrow_history');
+  }
+
 }

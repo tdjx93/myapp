@@ -1,0 +1,27 @@
+<table class="table">
+  <thead>
+  <th class="table-th">ID</th>
+  <th class="table-th">Tytuł</th>
+  <th class="table-th">Autor</th>
+  <th class="table-th">ISBN</th>
+  <th class="table-th">Category</th>
+  <th class="table-th">Available</th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let book of books">
+    <td class="table-td">{{book.id}}</td>
+    <td class="table-td">{{book.title}}</td>
+    <td class="table-td">{{book.author}}</td>
+    <td class="table-td">{{book.isbn}}</td>
+    <td class="table-td">{{book.bookCategoryName}}</td>
+    <td class="table-td">{{book.availabilityStatus}}</td>
+  </tr>
+  </tbody>
+</table>
+
+<div>
+  <h4>Liczba książek: ({{books?.length}})</h4>
+</div>
+
+<button><a routerLink="/new-book">Add Book</a></button>
+<button><a routerLink="/books">Show only available Books</a></button>

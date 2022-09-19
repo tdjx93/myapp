@@ -1,0 +1,18 @@
+<table class="table">
+  <thead>
+  <th class="table-th">ID</th>
+  <th class="table-th">Name</th>
+  <th class="table-th">history of borrowings</th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let borrower of borrowers">
+    <td class="table-td">{{borrower.id}}</td>
+    <td class="table-td">{{borrower.firstName}} {{borrower.lastName}}</td>
+    <td class="table-td"><a routerLink="/borrowers/{{borrower.id}}/history">see history</a></td>
+  </tr>
+  </tbody>
+</table>
+
+<div>
+  <button><a routerLink="/new-borrower">Add Borrower</a></button>
+</div>
