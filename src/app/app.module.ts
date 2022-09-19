@@ -21,6 +21,7 @@ import { NewAuthorComponent } from './components/new-author/new-author.component
 import { HomeComponent } from './components/home/home.component';
 import { UserRegistrationComponent } from './components/user-registration/user-registration.component';
 import { UserLoginComponent } from './components/user-login/user-login.component';
+import { httpInterceptorProviders } from './http-interceptors';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,9 @@ import { UserLoginComponent } from './components/user-login/user-login.component
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    httpInterceptorProviders
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
