@@ -11,4 +11,8 @@ export class UserService {
   register(userData: any){
     return this.httpClient.post('/api/register', userData);
   }
+
+  login(userData: any):any {
+    return this.httpClient.post('/api/login', userData);
+  }
 }
