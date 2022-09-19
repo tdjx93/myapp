@@ -14,6 +14,7 @@ import {BooksListByCategoryComponent} from "./components/books-list-by-category/
 import {AuthorsListComponent} from "./components/authors-list/authors-list.component";
 import {NewAuthorComponent} from "./components/new-author/new-author.component";
 import {HomeComponent} from "./components/home/home.component";
+import {UserRegistrationComponent} from "./components/user-registration/user-registration.component";
 
 const routes: Routes = [
   {path: 'books', component: BooksListComponent},
@@ -30,7 +31,8 @@ const routes: Routes = [
   {path: 'new-category', component: NewCategoryComponent},
   {path: 'authors', component: AuthorsListComponent},
   {path: 'new-author', component: NewAuthorComponent},
-  {path: 'home', component: HomeComponent}
+  {path: 'home', component: HomeComponent},
+  {path: 'registration', component: UserRegistrationComponent}
 ];
 
 @NgModule({

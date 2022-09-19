@@ -18,9 +18,7 @@ export class AppComponent {
   }
 
   ngOnInit() {
-    this.bookService.getBooks()
-      .subscribe(response => this.books = response)
-    // this.borrowerService.getBorrowers()
-    //   .subscribe(response => this.borrowers = response)
+
   }
+
 }

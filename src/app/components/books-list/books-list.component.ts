@@ -9,6 +9,10 @@ import {BookService} from "../../services/book.service";
 export class BooksListComponent implements OnInit {
   books: any;
   showOnlyAvailable: boolean
+  defaultPage: any
+  defaultPageSize: any
+  totalPages: any
+  numberArray: any
 
   constructor(private bookService: BookService) {
     this.showOnlyAvailable = false
@@ -22,8 +26,25 @@ export class BooksListComponent implements OnInit {
     }
   }
 
+
   ngOnInit() {
-    this.bookService.getBooks()
-      .subscribe(response => this.books = response)
+    this.defaultPage = 1;
+    this.defaultPageSize = 2;
+
+    this.bookService.getBooksByPage(this.defaultPage, this.defaultPageSize)
+      .subscribe(response => {
+        this.books = response.content;
+        this.totalPages = response.totalPages;
+        this.numberArray = this.numberSequence(this.totalPages)
+      })
+  }
+
+  numberSequence(n: number): Array<number> {
+    return Array(n);
+  }
+
+  loadPage(page: number) {
+    this.bookService.getBooksByPage(page, this.defaultPageSize)
+      .subscribe(response => this.books = response.content)
   }
 }

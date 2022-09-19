@@ -23,6 +23,14 @@
   <h4>Liczba książek: ({{filteredBooks?.length}})</h4>
 </div>
 
+<div>
+  <button
+    (click)="loadPage(i+1)"
+    *ngFor="let number of numberArray; let i = index">
+    Strona: {{ i + 1 }}
+  </button>
+</div>
+
 <button><a routerLink="/new-book">Add Book</a></button>
 <button
   (click)="showOnlyAvailable = !showOnlyAvailable"

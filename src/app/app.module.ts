@@ -19,6 +19,7 @@ import { BooksListByCategoryComponent } from './components/books-list-by-categor
 import { AuthorsListComponent } from './components/authors-list/authors-list.component';
 import { NewAuthorComponent } from './components/new-author/new-author.component';
 import { HomeComponent } from './components/home/home.component';
+import { UserRegistrationComponent } from './components/user-registration/user-registration.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { HomeComponent } from './components/home/home.component';
     BooksListByCategoryComponent,
     AuthorsListComponent,
     NewAuthorComponent,
-    HomeComponent
+    HomeComponent,
+    UserRegistrationComponent
   ],
   imports: [
     BrowserModule,

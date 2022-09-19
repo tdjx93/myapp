@@ -11,8 +11,14 @@ export class BookService {
   }
 
   getBooks() {
-    return this.httpClient.get(this.url);
+    return this.httpClient.get('/api/books?page=1&page_size=5');
   }
+
+  getBooksByPage(page: number, pageSize: number): any {
+    return this.httpClient.get('/api/books?page='+page+'&page_size='+pageSize)
+  }
+
+  // httpClient.params #TODO
 
   getAvailableBooks() {
     return this.httpClient.get('/api/books-available');
@@ -22,11 +28,8 @@ export class BookService {
     return this.httpClient.get('/api/books-by-category/' + category)
   }
 
-  getBooksByPage(page: any) {
-    return this.httpClient.get('api/books/page?page=' + page)
-  }
-
   createBook(bookData: any) {
     return this.httpClient.post(this.url, bookData);
   }
+
 }
