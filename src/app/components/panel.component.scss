@@ -16,6 +16,20 @@ h1 {
   padding: 5px 10px;
 }
 
+.search-toolbar {
+  position: fixed;
+  right: 5px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  background-color: gold;
+  color: black;
+  font-weight: 600;
+  padding: 5px 10px;
+}
+
 .content {
   display: flex;
   margin: 82px auto 32px;

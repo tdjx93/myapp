@@ -16,12 +16,13 @@ import {NewAuthorComponent} from "./components/panel/new-author/new-author.compo
 import {UserRegistrationComponent} from "./components/user-registration/user-registration.component";
 import {UserLoginComponent} from "./components/user-login/user-login.component";
 import {PanelComponent} from "./components/panel.component";
-import {
-  AuthGuardService as AuthGuard
-} from './services/auth-guard.service';
+import {AuthGuardService as AuthGuard} from './services/auth-guard.service';
+import {ProfileComponent} from "./components/panel/profile/profile.component";
+import {LogoutComponent} from "./logout/logout.component";
 
 const routes: Routes = [
-  {path: '', component: PanelComponent, canActivate: [AuthGuard],
+  {
+    path: '', component: PanelComponent, canActivate: [AuthGuard],
     children: [
       {path: 'books', component: BooksListComponent},
       {path: 'new-book', component: NewBookComponent},
@@ -37,9 +38,12 @@ const routes: Routes = [
       {path: 'new-category', component: NewCategoryComponent},
       {path: 'authors', component: AuthorsListComponent},
       {path: 'new-author', component: NewAuthorComponent},
-    ]},
+      {path: 'profile', component: ProfileComponent}
+    ]
+  },
   {path: 'registration', component: UserRegistrationComponent},
-  {path: 'login', component: UserLoginComponent}
+  {path: 'login', component: UserLoginComponent},
+  {path: 'logout', component: LogoutComponent}
 ];
 
 @NgModule({

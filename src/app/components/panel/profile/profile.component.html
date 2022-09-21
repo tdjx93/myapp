@@ -1,8 +1,5 @@
 <div class="register-div">
-  <form
-    (ngSubmit)="register()"
-    autocomplete="off"
-  >
+  <form (ngSubmit)="updateProfile()">
     <div class="form-block">
       <label class="label" for="first_name">First name:</label>
       <input
@@ -50,8 +47,32 @@
         [ngModelOptions]="{standalone: true}"
       >
     </div>
-    <button type="submit">Register</button>
-  </form>
 
-  <p>Already have an account? <a routerLink="/login">Login here.</a></p>
+    <div class="form-block">
+      <label class="label" for="password-repeat">Repeat password:</label>
+      <input
+        class="input"
+        type="password"
+        id="password-repeat"
+        placeholder="password here"
+        [(ngModel)]="form.repeatPassword"
+        [ngModelOptions]="{standalone: true}"
+      >
+    </div>
+
+    <div class="form-block">
+      <label class="label" for="role">Role:</label>
+      <input
+        class="input"
+        type="text"
+        id="role"
+        placeholder="role here"
+        [(ngModel)]="form.userRole"
+        [ngModelOptions]="{standalone: true}"
+        disabled
+      >
+    </div>
+
+    <button type="submit">Update profil</button>
+  </form>
 </div>

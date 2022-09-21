@@ -1,4 +1,6 @@
-<div class="login-div">
+<div
+  class="login-div"
+  *ngIf="!userService.isAuthenticated()">
   <form (ngSubmit)="login()">
     <div class="form-block">
       <label class="label" for="email">Email:</label>
@@ -25,4 +27,14 @@
     </div>
     <button type="submit">Login</button>
   </form>
+
+  <p>New to MyApp? <a routerLink="/registration">Register here.</a></p>
+</div>
+
+<div
+  class="login-div"
+  *ngIf="userService.isAuthenticated()"
+>
+  <p>You are already logged in.</p>
+  <a routerLink="/">Go back</a>
 </div>

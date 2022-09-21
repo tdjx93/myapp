@@ -1,39 +1,64 @@
-<div class="toolbar" role="banner">
+<div class="toolbar" role="banner" xmlns="http://www.w3.org/1999/html">
   <a routerLink="/"> Kontakt </a>
   <span> * - * </span>
   <a routerLink="/"> Regulamin </a>
   <span> * - * </span>
   <a routerLink="/"> Współpraca </a>
   <span> * - * </span>
-  <a routerLink="/login"> Zaloguj się </a>
-  <span> * - * </span>
-  <a routerLink="/home"> Wyloguj się </a>
-  <span> * - * </span>
-  <a routerLink="/registration"> Zarejestruj się </a>
-  <span> * - * </span>
   <a *ngIf="me"> User: {{ me.email }} </a>
+  <span> * - * </span>
+  <a routerLink="/profile"> My profile </a>
+  <span> * - * </span>
+  <span><a routerLink="/logout">Log out</a></span>
+</div>
+
+<div class="search-toolbar">
+  <label for="search-input">Find book: </label>
+  <input type="text" id="search-input">
+  <button type="submit">?</button>
 </div>
 
 
 <div class="content" role="main">
   <div class="sidebar">
     <ul>
-      <li>Books
+      <li>
+        Books
         <ul>
           <li><a routerLink="/books">All books</a></li>
           <li><a routerLink="/books-available">Available books</a></li>
           <li><a routerLink="/books-by-category">Books by category</a></li>
-          <li ng><a routerLink="/new-book">Add book</a></li>
+          <li *ngIf="me.userRole == 'LIBRARIAN'"><a routerLink="/new-book">Add book</a></li>
         </ul>
       </li>
-      <li><a routerLink="/authors">Authors</a></li>
-      <li><a routerLink="/borrowers">Borrowers</a></li>
-      <li><a routerLink="/categories">Categories</a></li>
 
-      <li></li>
-      <li><a routerLink="/new-borrow">Borrow book</a></li>
-      <li><a routerLink="/return-book">Return book</a></li>
-      <li><a routerLink="/home">Home</a></li>
+      <li>
+        Authors
+        <ul>
+          <li><a routerLink="/authors">Authors list</a></li>
+          <li *ngIf="me.userRole == 'LIBRARIAN'"><a routerLink="/new-author">Add Author</a></li>
+        </ul>
+      </li>
+
+      <li *ngIf="me.userRole == 'LIBRARIAN'">
+        Borrowers
+        <ul>
+          <li><a routerLink="/borrowers">Borrowers</a></li>
+          <li><a routerLink="/new-borrower">Add Borrower</a></li>
+        </ul>
+      </li>
+
+      <li>
+        Categories
+        <ul>
+          <li><a routerLink="/categories">Categories</a></li>
+          <li *ngIf="me.userRole == 'LIBRARIAN'"><a routerLink="/new-category">Add Category</a></li>
+        </ul>
+      </li>
+
+      <li *ngIf="me.userRole == 'LIBRARIAN'"><a routerLink="/new-borrow">Borrow book</a></li>
+      <li *ngIf="me.userRole == 'LIBRARIAN'"><a routerLink="/return-book">Return book</a></li>
+      <li><a routerLink="/my-borrows">My borrows</a></li>
     </ul>
   </div>
   <div class="container">
