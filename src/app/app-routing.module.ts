@@ -16,9 +16,13 @@ import {NewAuthorComponent} from "./components/panel/new-author/new-author.compo
 import {UserRegistrationComponent} from "./components/user-registration/user-registration.component";
 import {UserLoginComponent} from "./components/user-login/user-login.component";
 import {PanelComponent} from "./components/panel.component";
+import {
+  AuthGuardService as AuthGuard
+} from './services/auth-guard.service';
 
 const routes: Routes = [
-  {path: '', component: PanelComponent, children: [
+  {path: '', component: PanelComponent, canActivate: [AuthGuard],
+    children: [
       {path: 'books', component: BooksListComponent},
       {path: 'new-book', component: NewBookComponent},
       {path: 'books-available', component: AvailableBooksListComponent},

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 
 @Injectable({
@@ -6,13 +6,18 @@ import {HttpClient} from "@angular/common/http";
 })
 export class UserService {
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {
+  }
 
-  register(userData: any){
+  register(userData: any) {
     return this.httpClient.post('/api/register', userData);
   }
 
-  login(userData: any):any {
+  login(userData: any): any {
     return this.httpClient.post('/api/login', userData);
+  }
+
+  getMe(): any {
+    return this.httpClient.get('/api/me');
   }
 }

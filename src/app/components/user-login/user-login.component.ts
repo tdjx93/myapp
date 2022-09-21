@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {UserService} from "../../services/user.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-user-login',
@@ -14,7 +15,8 @@ export class UserLoginComponent implements OnInit {
   errors: any;
 
   constructor(
-    private userService: UserService
+    private userService: UserService,
+    private router: Router
   ) {  }
 
   ngOnInit(): void {
@@ -22,7 +24,10 @@ export class UserLoginComponent implements OnInit {
 
   login(): void {
     this.userService.login(this.form)
-      .subscribe(response => sessionStorage.setItem("token", response.token) );
+      .subscribe(response => {
+        sessionStorage.setItem("token", response.token)
+        this.router.navigate(["/"])
+      });
   }
 
 }

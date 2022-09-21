@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {UserService} from "../services/user.service";
 
 
 @Component({
@@ -7,10 +8,13 @@ import {Component} from '@angular/core';
   styleUrls: ['./panel.component.scss']
 })
 export class PanelComponent {
+  me: any;
 
-  constructor() {
+  constructor(private userService: UserService) {
   }
 
-  ngOnInit() {  }
-
+  ngOnInit() {
+    this.userService.getMe()
+      .subscribe(response => this.me = response);
+  }
 }
