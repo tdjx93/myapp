@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {BorrowService} from "../../services/borrow.service";
-import {BorrowerService} from "../../services/borrower.service";
-import {BookService} from "../../services/book.service";
+import {BorrowService} from "../../../services/borrow.service";
+import {BorrowerService} from "../../../services/borrower.service";
+import {BookService} from "../../../services/book.service";
 
 @Component({
   selector: 'app-new-borrow',

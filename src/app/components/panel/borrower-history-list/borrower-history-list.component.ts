@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {BorrowerService} from "../../services/borrower.service";
+import {BorrowerService} from "../../../services/borrower.service";
 
 @Component({
   selector: 'app-borrower-history-list',

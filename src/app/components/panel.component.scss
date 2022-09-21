@@ -1,0 +1,42 @@
+h1 {
+  margin: 8px 0;
+}
+
+.toolbar {
+  position: absolute;
+  top: 2px;
+  left: 5px;
+  right: 5px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: gold;
+  color: black;
+  font-weight: 600;
+  padding: 5px 10px;
+}
+
+.content {
+  display: flex;
+  margin: 82px auto 32px;
+  padding: 0 16px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #50d7b0;
+}
+
+.sidebar {
+  padding: 0 20px;
+  position: fixed;
+  left: 20px;
+  top: 100px;
+  background-color: #379a00;
+  border: 2px solid black;
+
+}

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {BorrowerService} from "../../services/borrower.service";
+import {BorrowerService} from "../../../services/borrower.service";
 
 @Component({
   selector: 'app-borrowers-list',

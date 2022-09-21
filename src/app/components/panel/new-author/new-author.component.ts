@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {AuthorService} from "../../services/author.service";
+import {AuthorService} from "../../../services/author.service";
 import {Router} from "@angular/router";
 
 @Component({

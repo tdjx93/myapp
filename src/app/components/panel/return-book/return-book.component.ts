@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {BorrowService} from "../../services/borrow.service";
-import {BorrowerService} from "../../services/borrower.service";
+import {BorrowService} from "../../../services/borrow.service";
+import {BorrowerService} from "../../../services/borrower.service";
 
 @Component({
   selector: 'app-return-book',
