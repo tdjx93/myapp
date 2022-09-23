@@ -22,8 +22,12 @@ export class BorrowerService {
     return this.httpClient.post(this.url, borrowerData);
   }
 
-  getHistory(id: any) {
-    return this.httpClient.get('/api/borrowers/' + id +'/borrow_history');
+  getMyBorrowList() {
+    return this.httpClient.get('/api/borrows/me');
+  }
+
+  getHistoryByUsername(username: any) {
+    return this.httpClient.get('/api/borrows?username=' + username )
   }
 
 }

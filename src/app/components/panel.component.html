@@ -44,7 +44,6 @@
         Borrowers
         <ul>
           <li><a routerLink="/borrowers">Borrowers</a></li>
-          <li><a routerLink="/new-borrower">Add Borrower</a></li>
         </ul>
       </li>
 
@@ -56,9 +55,9 @@
         </ul>
       </li>
 
-      <li *ngIf="me.userRole == 'LIBRARIAN'"><a routerLink="/new-borrow">Borrow book</a></li>
-      <li *ngIf="me.userRole == 'LIBRARIAN'"><a routerLink="/return-book">Return book</a></li>
-      <li><a routerLink="/my-borrows">My borrows</a></li>
+      <li><a routerLink="/new-borrow">Borrow request</a></li>
+      <li><a routerLink="/return-book">Return request</a></li>
+      <li><a routerLink="/my-borrow-list">My borrows</a></li>
     </ul>
   </div>
   <div class="container">

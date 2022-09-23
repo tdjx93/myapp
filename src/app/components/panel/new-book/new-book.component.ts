@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {BookService} from "../../../services/book.service";
 import {CategoryService} from "../../../services/category.service";
 import {AuthorService} from "../../../services/author.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-new-book',
@@ -13,7 +14,7 @@ export class NewBookComponent implements OnInit {
   authors: any;
   form = {
     title: '',
-    authorFullName: '',
+    authorName: '',
     isbn: '',
     bookCategoryName: '',
   };
@@ -21,24 +22,33 @@ export class NewBookComponent implements OnInit {
 
   constructor(private bookService: BookService,
               private categoryService: CategoryService,
-              private authorService: AuthorService) {
+              private authorService: AuthorService,
+              private router: Router
+  ) {
   }
 
-  saveBook(): void {
+  saveBook()
+    :
+    void {
     this.bookService
       .createBook(this.form)
       .subscribe(
-        result => console.log('Book created'),
-        response => {
-          this.errors = {};
-          for (const error of response.error) {
-            this.errors[error.field] = error.message;
-          }
+        result => {
+          console.log('Book created');
+          this.router.navigate(['/books']);
+        },
+      response => {
+        this.errors = {};
+        for (const error of response.error) {
+          this.errors[error.field] = error.message;
         }
-      )
+      }
+  )
   }
 
-  ngOnInit(): void {
+  ngOnInit()
+    :
+    void {
     this.categoryService.getCategories()
       .subscribe(response => this.categories = response)
     this.authorService.getAuthors()

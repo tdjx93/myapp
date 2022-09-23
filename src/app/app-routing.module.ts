@@ -3,8 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {BooksListComponent} from "./components/panel/books-list/books-list.component";
 import {BorrowersListComponent} from "./components/panel/borrowers-list/borrowers-list.component";
 import {NewBookComponent} from "./components/panel/new-book/new-book.component";
-import {NewBorrowerComponent} from "./components/panel/new-borrower/new-borrower.component";
-import {BorrowerHistoryListComponent} from "./components/panel/borrower-history-list/borrower-history-list.component";
+import {MyBorrowListComponent} from "./components/panel/my-borrow-list/my-borrow-list.component";
 import {NewBorrowComponent} from "./components/panel/new-borrow/new-borrow.component";
 import {CategoriesListComponent} from "./components/panel/categories-list/categories-list.component";
 import {NewCategoryComponent} from "./components/panel/new-category/new-category.component";
@@ -31,8 +30,7 @@ const routes: Routes = [
       {path: 'books-by-category/:category', component: BooksListByCategoryComponent},
       {path: 'return-book', component: ReturnBookComponent},
       {path: 'borrowers', component: BorrowersListComponent},
-      {path: 'borrowers/:id/history', component: BorrowerHistoryListComponent},
-      {path: 'new-borrower', component: NewBorrowerComponent},
+      {path: 'my-borrow-list', component: MyBorrowListComponent},
       {path: 'new-borrow', component: NewBorrowComponent},
       {path: 'categories', component: CategoriesListComponent},
       {path: 'new-category', component: NewCategoryComponent},

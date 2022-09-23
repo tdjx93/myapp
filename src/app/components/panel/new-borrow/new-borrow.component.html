@@ -1,5 +1,6 @@
-<h1>Save new Borrow</h1>
-<form (ngSubmit)="saveBorrow()">
+<h1>Request book</h1>
+<p>Under construction...</p>
+<form (ngSubmit)="requestBook()">
 
   <div class="form-block">
     <label class="label">Select book:</label>
@@ -15,19 +16,5 @@
       </option>
     </select>
   </div>
-
-  <div class="form-block">
-    <label class="label">Select borrower:</label>
-    <select
-      class="select"
-      [(ngModel)]="form.borrowerId"
-      [ngModelOptions]="{standalone: true}"
-    >
-    <option selected disabled> - - BORROWER NAME - - </option>
-    <option *ngFor="let borrower of borrowers" [ngValue]="borrower.id">
-      {{borrower.lastName}} {{borrower.firstName}}
-    </option>
-    </select>
-  </div>
-  <button type="submit">Save borrow</button>
+  <button type="submit">Request book</button>
 </form>

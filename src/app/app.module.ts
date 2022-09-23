@@ -8,8 +8,7 @@ import {BooksListComponent} from './components/panel/books-list/books-list.compo
 import {AppRoutingModule} from './app-routing.module';
 import {BorrowersListComponent} from './components/panel/borrowers-list/borrowers-list.component';
 import {NewBookComponent} from './components/panel/new-book/new-book.component';
-import {NewBorrowerComponent} from './components/panel/new-borrower/new-borrower.component';
-import {BorrowerHistoryListComponent} from './components/panel/borrower-history-list/borrower-history-list.component';
+import {MyBorrowListComponent} from './components/panel/my-borrow-list/my-borrow-list.component';
 import {NewBorrowComponent} from './components/panel/new-borrow/new-borrow.component';
 import {CategoriesListComponent} from './components/panel/categories-list/categories-list.component';
 import {NewCategoryComponent} from './components/panel/new-category/new-category.component';
@@ -24,6 +23,7 @@ import {PanelComponent} from './components/panel.component';
 import {httpInterceptorProviders} from './http-interceptors';
 import {ProfileComponent} from './components/panel/profile/profile.component';
 import {LogoutComponent} from './logout/logout.component';
+import { MyBorrowsComponent } from './components/panel/my-borrows/my-borrows.component';
 
 @NgModule({
   declarations: [
@@ -31,8 +31,7 @@ import {LogoutComponent} from './logout/logout.component';
     BooksListComponent,
     BorrowersListComponent,
     NewBookComponent,
-    NewBorrowerComponent,
-    BorrowerHistoryListComponent,
+    MyBorrowListComponent,
     NewBorrowComponent,
     CategoriesListComponent,
     NewCategoryComponent,
@@ -46,6 +45,7 @@ import {LogoutComponent} from './logout/logout.component';
     UserLoginComponent,
     ProfileComponent,
     LogoutComponent,
+    MyBorrowsComponent,
   ],
   imports: [
     BrowserModule,

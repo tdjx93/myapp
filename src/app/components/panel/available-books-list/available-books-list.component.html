@@ -9,12 +9,12 @@
   <th class="table-th">Category</th>
   </thead>
   <tbody>
-  <tr *ngFor="let book of availableBooks">
-    <td class="table-td">{{book.id}}</td>
-    <td class="table-td">{{book.title}}</td>
-    <td class="table-td">{{book.author}}</td>
-    <td class="table-td">{{book.isbn}}</td>
-    <td class="table-td">{{book.bookCategoryName}}</td>
+  <tr *ngFor="let availableBook of availableBooks">
+    <td class="table-td">{{availableBook.id}}</td>
+    <td class="table-td">{{availableBook.title}}</td>
+    <td class="table-td">{{availableBook.authorName}}</td>
+    <td class="table-td">{{availableBook.isbn}}</td>
+    <td class="table-td">{{availableBook.bookCategoryName}}</td>
   </tr>
   </tbody>
 </table>

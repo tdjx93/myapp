@@ -18,16 +18,16 @@
     <label class="label">Author:</label>
     <select
       class="select"
-      [(ngModel)]="form.authorFullName"
+      [(ngModel)]="form.authorName"
       [ngModelOptions]="{standalone: true}"
     >
       <option disabled selected> - - AUTHOR FULL NAME - -</option>
-      <option *ngFor="let author of authors" [ngValue]="author.fullName">
-        {{author.fullName}}
+      <option *ngFor="let author of authors" [ngValue]="author.name">
+        {{author.name}}
       </option>
     </select>
     <div *ngIf="errors && errors.authorFullName" class="field-error">
-      {{ errors.authorFullName}}
+      {{ errors.authorName}}
     </div>
   </div>
 

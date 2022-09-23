@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {BookService} from "../../../services/book.service";
-import {HttpHeaders} from "@angular/common/http";
 
 @Component({
   selector: 'app-books-list',
@@ -27,21 +26,16 @@ export class BooksListComponent implements OnInit {
     }
   }
 
-
   ngOnInit() {
     this.defaultPage = 1;
-    this.defaultPageSize = 2;
+    this.defaultPageSize = 5;
 
     this.bookService.getBooksByPage(this.defaultPage, this.defaultPageSize)
       .subscribe(response => {
         this.books = response.content;
         this.totalPages = response.totalPages;
         this.numberArray = this.numberSequence(this.totalPages)
-
       })
-
-
-
   }
 
   numberSequence(n: number): Array<number> {
