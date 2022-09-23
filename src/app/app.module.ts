@@ -6,7 +6,7 @@ import {AppComponent} from './app.component';
 import {HttpClientModule} from '@angular/common/http';
 import {BooksListComponent} from './components/panel/books-list/books-list.component';
 import {AppRoutingModule} from './app-routing.module';
-import {BorrowersListComponent} from './components/panel/borrowers-list/borrowers-list.component';
+import {ReadersListComponent} from './components/panel/readers-list/readers-list.component';
 import {NewBookComponent} from './components/panel/new-book/new-book.component';
 import {MyBorrowListComponent} from './components/panel/my-borrow-list/my-borrow-list.component';
 import {NewBorrowComponent} from './components/panel/new-borrow/new-borrow.component';
@@ -24,12 +24,13 @@ import {httpInterceptorProviders} from './http-interceptors';
 import {ProfileComponent} from './components/panel/profile/profile.component';
 import {LogoutComponent} from './logout/logout.component';
 import { MyBorrowsComponent } from './components/panel/my-borrows/my-borrows.component';
+import { LibrariansListComponent } from './components/panel/librarians-list/librarians-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BooksListComponent,
-    BorrowersListComponent,
+    ReadersListComponent,
     NewBookComponent,
     MyBorrowListComponent,
     NewBorrowComponent,
@@ -46,6 +47,7 @@ import { MyBorrowsComponent } from './components/panel/my-borrows/my-borrows.com
     ProfileComponent,
     LogoutComponent,
     MyBorrowsComponent,
+    LibrariansListComponent,
   ],
   imports: [
     BrowserModule,

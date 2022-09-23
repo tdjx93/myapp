@@ -1,0 +1,19 @@
+<table class="table">
+  <thead>
+  <th class="table-th">ID</th>
+  <th class="table-th">Name</th>
+  <th class="table-th">Email</th>
+  <th class="table-th">Date of birth</th>
+  <th class="table-th">Role</th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let reader of readers">
+    <td class="table-td">{{reader.id}}</td>
+    <td class="table-td">{{reader.firstName}} {{reader.lastName}}</td>
+    <td class="table-td">{{ reader.email }}</td>
+    <td class="table-td">{{ reader.birthDate }}</td>
+    <td class="table-td">{{ reader.role }}</td>
+  </tr>
+  </tbody>
+</table>
+

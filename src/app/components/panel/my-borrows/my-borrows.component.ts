@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {UserService} from "../../../services/user.service";
-import {BorrowerService} from "../../../services/borrower.service";
+import {ReaderService} from "../../../services/reader.service";
 
 @Component({
   selector: 'app-my-borrows',
@@ -10,7 +10,7 @@ import {BorrowerService} from "../../../services/borrower.service";
 export class MyBorrowsComponent implements OnInit {
   myBorrows: any;
 
-  constructor(private borrowerService: BorrowerService,
+  constructor(private borrowerService: ReaderService,
               private userService: UserService) {
   }
 

@@ -4,6 +4,7 @@ import {Injectable} from '@angular/core';
   providedIn: 'root'
 })
 export class AuthenticationService {
+  me: any;
 
   isAuthenticated(): boolean {
     const token = sessionStorage.getItem('token');

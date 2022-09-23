@@ -34,4 +34,8 @@ export class UserService {
   isAuthenticated(): boolean {
     return this.authenticationService.isAuthenticated();
   }
+
+  getLibrarians() {
+    return this.httpClient.get('/api/librarians')
+  }
 }

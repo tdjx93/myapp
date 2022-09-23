@@ -1,0 +1,19 @@
+<table class="table">
+  <thead>
+  <th class="table-th">ID</th>
+  <th class="table-th">Name</th>
+  <th class="table-th">Email</th>
+  <th class="table-th">Date of birth</th>
+  <th class="table-th">Role</th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let librarian of librarians">
+    <td class="table-td">{{librarian.id}}</td>
+    <td class="table-td">{{librarian.firstName}} {{librarian.lastName}}</td>
+    <td class="table-td">{{ librarian.email }}</td>
+    <td class="table-td">{{ librarian.birthDate }}</td>
+    <td class="table-td">{{ librarian.role }}</td>
+  </tr>
+  </tbody>
+</table>
+

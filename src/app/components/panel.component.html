@@ -28,7 +28,7 @@
           <li><a routerLink="/books">All books</a></li>
           <li><a routerLink="/books-available">Available books</a></li>
           <li><a routerLink="/books-by-category">Books by category</a></li>
-          <li *ngIf="me.userRole == 'LIBRARIAN'"><a routerLink="/new-book">Add book</a></li>
+          <li *ngIf="me.role == LIBRARIAN_ROLE"><a routerLink="/new-book">Add book</a></li>
         </ul>
       </li>
 
@@ -36,14 +36,21 @@
         Authors
         <ul>
           <li><a routerLink="/authors">Authors list</a></li>
-          <li *ngIf="me.userRole == 'LIBRARIAN'"><a routerLink="/new-author">Add Author</a></li>
+          <li *ngIf="me.role == LIBRARIAN_ROLE"><a routerLink="/new-author">Add Author</a></li>
         </ul>
       </li>
 
-      <li *ngIf="me.userRole == 'LIBRARIAN'">
-        Borrowers
+      <li *ngIf="me.role == LIBRARIAN_ROLE">
+        Readers
         <ul>
-          <li><a routerLink="/borrowers">Borrowers</a></li>
+          <li><a routerLink="/readers">Readers</a></li>
+        </ul>
+      </li>
+
+      <li *ngIf="me.role == ADMIN_ROLE">
+        Librarians
+        <ul>
+          <li><a routerLink="/librarians">Librarians</a></li>
         </ul>
       </li>
 
@@ -51,13 +58,15 @@
         Categories
         <ul>
           <li><a routerLink="/categories">Categories</a></li>
-          <li *ngIf="me.userRole == 'LIBRARIAN'"><a routerLink="/new-category">Add Category</a></li>
+          <li *ngIf="me.role == LIBRARIAN_ROLE "><a routerLink="/new-category">Add Category</a></li>
         </ul>
       </li>
 
       <li><a routerLink="/new-borrow">Borrow request</a></li>
       <li><a routerLink="/return-book">Return request</a></li>
       <li><a routerLink="/my-borrow-list">My borrows</a></li>
+
+      <li *ngIf="me.role == 'ADMIN'"></li>
     </ul>
   </div>
   <div class="container">

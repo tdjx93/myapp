@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ReaderService } from './reader.service';
+import { IsAdminGuardService } from './is-admin-guard.service';
 
-describe('BorrowerService', () => {
-  let service: ReaderService;
+describe('IsAdminGuardService', () => {
+  let service: IsAdminGuardService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(ReaderService);
+    service = TestBed.inject(IsAdminGuardService);
   });
 
   it('should be created', () => {
