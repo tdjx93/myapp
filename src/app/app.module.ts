@@ -25,6 +25,9 @@ import {ProfileComponent} from './components/panel/profile/profile.component';
 import {LogoutComponent} from './logout/logout.component';
 import { MyBorrowsComponent } from './components/panel/my-borrows/my-borrows.component';
 import { LibrariansListComponent } from './components/panel/librarians-list/librarians-list.component';
+import { BookComponent } from './components/panel/book/book.component';
+import { AuthorComponent } from './components/panel/author/author.component';
+import { NewUsersComponent } from './components/panel/new-users/new-users.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +51,9 @@ import { LibrariansListComponent } from './components/panel/librarians-list/libr
     LogoutComponent,
     MyBorrowsComponent,
     LibrariansListComponent,
+    BookComponent,
+    AuthorComponent,
+    NewUsersComponent,
   ],
   imports: [
     BrowserModule,

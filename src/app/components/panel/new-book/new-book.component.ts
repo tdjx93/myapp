@@ -31,7 +31,7 @@ export class NewBookComponent implements OnInit {
     :
     void {
     this.bookService
-      .createBook(this.form)
+      .create(this.form)
       .subscribe(
         result => {
           console.log('Book created');
@@ -51,7 +51,7 @@ export class NewBookComponent implements OnInit {
     void {
     this.categoryService.getCategories()
       .subscribe(response => this.categories = response)
-    this.authorService.getAuthors()
+    this.authorService.get()
       .subscribe(response => this.authors = response)
   }
 }

@@ -30,7 +30,7 @@ export class BooksListComponent implements OnInit {
     this.defaultPage = 1;
     this.defaultPageSize = 5;
 
-    this.bookService.getBooksByPage(this.defaultPage, this.defaultPageSize)
+    this.bookService.get(this.defaultPage, this.defaultPageSize)
       .subscribe(response => {
         this.books = response.content;
         this.totalPages = response.totalPages;
@@ -43,7 +43,7 @@ export class BooksListComponent implements OnInit {
   }
 
   loadPage(page: number) {
-    this.bookService.getBooksByPage(page, this.defaultPageSize)
+    this.bookService.get(page, this.defaultPageSize)
       .subscribe(response => this.books = response.content)
   }
 }

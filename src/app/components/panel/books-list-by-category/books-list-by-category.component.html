@@ -2,17 +2,16 @@
   <label class="label">Category:</label>
   <select
     class="select"
-    [(ngModel)]="selectedCategoryId"
+    [(ngModel)]="selectedCategoryName"
     [ngModelOptions]="{standalone: true}"
     (change)="loadBooks()"
   >
     <option disabled selected> - - WYBIERZ KATEGORIĘ - - </option>
-    <option *ngFor="let category of categories" [ngValue]="category.id">
+    <option *ngFor="let category of categories" [ngValue]="category.name">
       {{category.name}}
     </option>
 
   </select>
-  <label>( #TODO )</label>
 </div>
 
 <table class="table">
@@ -27,8 +26,8 @@
   <tbody>
   <tr *ngFor="let book of books">
     <td class="table-td">{{book.id}}</td>
-    <td class="table-td">{{book.title}}</td>
-    <td class="table-td">{{book.authorName}}</td>
+    <td class="table-td"><a routerLink="/books/{{book.title}}/">{{book.title}}</a></td>
+    <td class="table-td"><a routerLink="/authors/{{book.authorName}}/">{{book.authorName}}</a> </td>
     <td class="table-td">{{book.isbn}}</td>
     <td class="table-td">{{book.bookCategoryName}}</td>
     <td class="table-td">{{book.availabilityStatus}}</td>
@@ -37,5 +36,5 @@
 </table>
 
 <div>
-  <h4>Liczba książek kategorii ( #TODO ) : ({{books?.length}})</h4>
+  <h4>Liczba książek: ({{books? books.length : 0}})</h4>
 </div>

@@ -9,8 +9,12 @@ export class AuthorService {
   constructor(private httpClient: HttpClient) {
   }
 
-  getAuthors() {
+  get() {
     return this.httpClient.get('/api/authors')
+  }
+
+  getByName(name: any) {
+    return this.httpClient.get('/api/authors/' + name + '/')
   }
 
   createAuthor(authorData: any) {

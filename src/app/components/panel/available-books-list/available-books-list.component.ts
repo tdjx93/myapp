@@ -18,7 +18,7 @@ export class AvailableBooksListComponent implements OnInit {
     this.page = 1;
    this.pageSize = 2;
 
-    this.bookService.getAvailableBooks()
+    this.bookService.getAvailable()
       .subscribe(response => {
         this.availableBooks = response;
       })

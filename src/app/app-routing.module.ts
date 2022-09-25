@@ -21,13 +21,16 @@ import {IsAdminGuardService as IsAdminGuard} from './services/guard/is-admin-gua
 import {ProfileComponent} from "./components/panel/profile/profile.component";
 import {LogoutComponent} from "./logout/logout.component";
 import {LibrariansListComponent} from "./components/panel/librarians-list/librarians-list.component";
+import {BookComponent} from "./components/panel/book/book.component";
+import {AuthorComponent} from "./components/panel/author/author.component";
+import {NewUsersComponent} from "./components/panel/new-users/new-users.component";
 
 const routes: Routes = [
   {
     path: '', component: PanelComponent, canActivate: [AuthGuard],
     children: [
       {path: 'librarians', component: LibrariansListComponent, canActivate: [IsAdminGuard]},
-      {path: 'readers', component: ReadersListComponent, canActivate: [IsLibrarianGuard]},
+      {path: 'readers', component: ReadersListComponent, canActivate: [IsLibrarianGuard]},    // MULTIPLE GUARDS DO NOT WORK
       {path: 'books', component: BooksListComponent},
       {path: 'new-book', component: NewBookComponent},
       {path: 'books-available', component: AvailableBooksListComponent},
@@ -41,6 +44,9 @@ const routes: Routes = [
       {path: 'authors', component: AuthorsListComponent},
       {path: 'new-author', component: NewAuthorComponent},
       {path: 'profile', component: ProfileComponent},
+      {path: 'books/:title', component: BookComponent},
+      {path: 'authors/:name', component: AuthorComponent},
+      {path: 'new-users', component: NewUsersComponent, canActivate: [IsAdminGuard]},
     ]
   },
   {path: 'registration', component: UserRegistrationComponent},

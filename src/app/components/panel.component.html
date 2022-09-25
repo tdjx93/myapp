@@ -22,52 +22,57 @@
 <div class="content" role="main">
   <div class="sidebar">
     <ul>
-      <li>
-        Books
+      <li>Books
         <ul>
           <li><a routerLink="/books">All books</a></li>
-          <li><a routerLink="/books-available">Available books</a></li>
-          <li><a routerLink="/books-by-category">Books by category</a></li>
-          <li *ngIf="me.role == LIBRARIAN_ROLE"><a routerLink="/new-book">Add book</a></li>
+          <li><a routerLink="/books-available"> Available books</a></li>
+          <li><a routerLink="/books-by-category"> Books by category</a></li>
         </ul>
       </li>
 
-      <li>
-        Authors
+      <li>Authors
         <ul>
           <li><a routerLink="/authors">Authors list</a></li>
-          <li *ngIf="me.role == LIBRARIAN_ROLE"><a routerLink="/new-author">Add Author</a></li>
         </ul>
       </li>
 
-      <li *ngIf="me.role == LIBRARIAN_ROLE">
-        Readers
-        <ul>
-          <li><a routerLink="/readers">Readers</a></li>
-        </ul>
-      </li>
-
-      <li *ngIf="me.role == ADMIN_ROLE">
-        Librarians
-        <ul>
-          <li><a routerLink="/librarians">Librarians</a></li>
-        </ul>
-      </li>
-
-      <li>
-        Categories
+      <li>Categories
         <ul>
           <li><a routerLink="/categories">Categories</a></li>
-          <li *ngIf="me.role == LIBRARIAN_ROLE "><a routerLink="/new-category">Add Category</a></li>
         </ul>
       </li>
 
-      <li><a routerLink="/new-borrow">Borrow request</a></li>
-      <li><a routerLink="/return-book">Return request</a></li>
-      <li><a routerLink="/my-borrow-list">My borrows</a></li>
-
-      <li *ngIf="me.role == 'ADMIN'"></li>
     </ul>
+
+    <div *ngIf="me.role == READER_ROLE" class="reader-panel">
+      <p>LIBRARIAN PANEL</p>
+      <ul>
+        <li><a routerLink="/new-borrow">Borrow request</a></li>
+        <li><a routerLink="/return-book">Return request</a></li>
+        <li><a routerLink="/my-borrow-list">My borrows</a></li>
+      </ul>
+    </div>
+
+    <div *ngIf="me.role == LIBRARIAN_ROLE" class="librarian-panel">
+      <p>LIBRARIAN PANEL</p>
+      <ul>
+        <li><a routerLink="/new-book">Add book</a></li>
+        <li><a routerLink="/new-author">Add Author</a></li>
+        <li><a routerLink="/new-category">Add Category</a></li>
+        <li><a routerLink="/readers">Readers</a></li>
+        <li><a routerLink="/new-users">New users</a></li>
+      </ul>
+    </div>
+
+    <div *ngIf="me.role == ADMIN_ROLE" class="admin-panel">
+      <p>ADMIN PANEL</p>
+      <ul>
+        <li><a routerLink="/librarians">Librarians</a></li>
+        <li><a routerLink="/readers">Readers</a></li>
+        <li><a routerLink="/new-users">New users</a></li>
+      </ul>
+    </div>
+
   </div>
   <div class="container">
     <router-outlet></router-outlet>
