@@ -12,7 +12,7 @@ export class AuthorsListComponent implements OnInit {
   constructor(private authorService: AuthorService) { }
 
   ngOnInit(): void {
-    this.authorService.getAuthors()
+    this.authorService.get()
       .subscribe(response => {
         this.authors = response
       })

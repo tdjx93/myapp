@@ -7,7 +7,7 @@
   <tbody>
   <tr *ngFor="let category of categories">
     <td class="table-td">{{category.id}}</td>
-    <td class="table-td">{{category.name}} </td>
+    <td class="table-td"><a routerLink="/books-by-category/{{category.name}}/">{{category.name}}</a></td>
   </tr>
   </tbody>
 </table>

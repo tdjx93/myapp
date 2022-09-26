@@ -4,14 +4,14 @@ import {HttpClient} from "@angular/common/http";
 @Injectable({
   providedIn: 'root'
 })
-export class BorrowerService {
+export class ReaderService {
   private url = '/api/borrowers'
 
   constructor(private httpClient: HttpClient) {
   }
 
-  getBorrowers() {
-    return this.httpClient.get(this.url);
+  getReaders() {
+    return this.httpClient.get('/api/readers');
   }
 
   getBorrowerById(id: any) {

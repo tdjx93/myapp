@@ -6,7 +6,6 @@ import {AuthenticationService} from "./authentication.service";
   providedIn: 'root'
 })
 export class UserService {
-
   constructor(private httpClient: HttpClient,
               private authenticationService: AuthenticationService) {
   }
@@ -34,4 +33,9 @@ export class UserService {
   isAuthenticated(): boolean {
     return this.authenticationService.isAuthenticated();
   }
+
+  getByRole(role: any): any {
+    return this.httpClient.get('/api/' + role)
+  }
+
 }

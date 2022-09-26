@@ -31,27 +31,25 @@ export class NewBookComponent implements OnInit {
     :
     void {
     this.bookService
-      .createBook(this.form)
+      .create(this.form)
       .subscribe(
         result => {
           console.log('Book created');
           this.router.navigate(['/books']);
         },
-      response => {
-        this.errors = {};
-        for (const error of response.error) {
-          this.errors[error.field] = error.message;
+        response => {
+          this.errors = {};
+          for (const error of response.error) {
+            this.errors[error.field] = error.message;
+          }
         }
-      }
-  )
+      )
   }
 
-  ngOnInit()
-    :
-    void {
+  ngOnInit(): void {
     this.categoryService.getCategories()
       .subscribe(response => this.categories = response)
-    this.authorService.getAuthors()
+    this.authorService.get()
       .subscribe(response => this.authors = response)
   }
 }

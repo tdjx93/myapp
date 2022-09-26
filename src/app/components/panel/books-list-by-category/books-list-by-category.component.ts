@@ -11,23 +11,30 @@ import {ActivatedRoute} from "@angular/router";
 export class BooksListByCategoryComponent implements OnInit {
   books: any;
   categories: any;
-  selectedCategoryId: number | null;
+  selectedCategoryName: number | null;
 
 
   constructor(private bookService: BookService,
               private categoryService: CategoryService,
               private route: ActivatedRoute) {
-    this.selectedCategoryId = null;
+    this.selectedCategoryName = null;
   }
 
   loadBooks(): void {
-    this.bookService.getBooksByCategory(this.selectedCategoryId)
+    this.bookService.getByCategoryName(this.selectedCategoryName)
       .subscribe(response => this.books = response)
   }
 
   ngOnInit(): void {
+    let paramMap = this.route.snapshot.paramMap;
+    let category = paramMap.get('category');
+    if (category)
+      this.bookService.getByCategoryName(category)
+        .subscribe(response => this.books = response);
+
     this.categoryService.getCategories()
-      .subscribe(response => this.categories = response)
+      .subscribe(response => this.categories = response);
+
   }
 
 }

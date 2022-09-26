@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {BorrowerService} from "../../../services/borrower.service";
+import {ReaderService} from "../../../services/reader.service";
 
 @Component({
   selector: 'app-borrower-history-list',
@@ -10,7 +10,7 @@ import {BorrowerService} from "../../../services/borrower.service";
 export class MyBorrowListComponent implements OnInit {
   history: any;
 
-  constructor(private borrowerService: BorrowerService,
+  constructor(private borrowerService: ReaderService,
               private route: ActivatedRoute) {
   }
 

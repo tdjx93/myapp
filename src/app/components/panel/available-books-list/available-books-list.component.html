@@ -11,10 +11,10 @@
   <tbody>
   <tr *ngFor="let availableBook of availableBooks">
     <td class="table-td">{{availableBook.id}}</td>
-    <td class="table-td">{{availableBook.title}}</td>
-    <td class="table-td">{{availableBook.authorName}}</td>
+    <td class="table-td"><a routerLink="/books/{{availableBook.title}}/">{{availableBook.title}}</a></td>
+    <td class="table-td"><a routerLink="/authors/{{availableBook.authorName}}">{{availableBook.authorName}}</a></td>
     <td class="table-td">{{availableBook.isbn}}</td>
-    <td class="table-td">{{availableBook.bookCategoryName}}</td>
+    <td class="table-td"><a routerLink="/books-by-category/{{availableBook.bookCategoryName}}/">{{availableBook.bookCategoryName}}</a></td>
   </tr>
   </tbody>
 </table>

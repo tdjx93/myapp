@@ -1,0 +1,23 @@
+<h1>New Users</h1>
+
+<table class="table">
+  <thead>
+  <th class="table-th">ID</th>
+  <th class="table-th">Name</th>
+  <th class="table-th">Email</th>
+  <th class="table-th">Date of birth</th>
+  <th class="table-th">Role</th>
+  <th class="table-th">Activate user</th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let newUser of newUsers">
+    <td class="table-td">{{newUser.id}}</td>
+    <td class="table-td">{{newUser.firstName}} {{newUser.lastName}}</td>
+    <td class="table-td">{{ newUser.email }}</td>
+    <td class="table-td">{{ newUser.birthDate }}</td>
+    <td class="table-td">{{ newUser.role }}</td>
+    <td><button type="submit">Activate</button></td>
+  </tr>
+  </tbody>
+</table>
+

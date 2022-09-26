@@ -14,7 +14,7 @@ export class ProfileComponent implements OnInit {
     email: '',
     password: '',
     repeatPassword: '',
-    userRole: ''
+    role: ''
   };
 
   constructor(private userService: UserService,

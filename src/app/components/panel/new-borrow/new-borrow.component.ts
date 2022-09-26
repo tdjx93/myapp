@@ -27,7 +27,7 @@ export class NewBorrowComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.bookService.getAvailableBooks()
+    this.bookService.getAvailable()
       .subscribe(response => this.books = response)
   }
 }
