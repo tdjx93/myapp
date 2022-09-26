@@ -32,6 +32,10 @@ export class BookService {
     return this.httpClient.get('/api/books/category/' + category + '/')
   }
 
+  getByKeyWord(keyWord: any): any {
+    return this.httpClient.get('/api/books/search?key_word=' + keyWord)
+  }
+
   // httpClient.params #TODO
 
   getAvailableBooksPage(page: number, pageSize: number): any {

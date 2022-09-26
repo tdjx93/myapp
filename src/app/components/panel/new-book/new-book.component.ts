@@ -37,18 +37,16 @@ export class NewBookComponent implements OnInit {
           console.log('Book created');
           this.router.navigate(['/books']);
         },
-      response => {
-        this.errors = {};
-        for (const error of response.error) {
-          this.errors[error.field] = error.message;
+        response => {
+          this.errors = {};
+          for (const error of response.error) {
+            this.errors[error.field] = error.message;
+          }
         }
-      }
-  )
+      )
   }
 
-  ngOnInit()
-    :
-    void {
+  ngOnInit(): void {
     this.categoryService.getCategories()
       .subscribe(response => this.categories = response)
     this.authorService.get()

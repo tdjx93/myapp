@@ -13,9 +13,12 @@
 </div>
 
 <div class="search-toolbar">
-  <label for="search-input">Find book: </label>
-  <input type="text" id="search-input">
-  <button type="submit">?</button>
+  <label for="search_input">Find book: </label>
+  <input type="text" id="search_input" #search_input>
+  <button
+    routerLink="/search-result/{{search_input.value}}"
+    type="submit">?
+  </button>
 </div>
 
 

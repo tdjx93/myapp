@@ -15,7 +15,8 @@ export class PanelComponent {
   NEW_USER = 'NEW_USER'
   me: any;
 
-  constructor(private userService: UserService, private authentication: AuthenticationService) {
+  constructor(private userService: UserService,
+              private authentication: AuthenticationService) {
   }
 
   ngOnInit() {

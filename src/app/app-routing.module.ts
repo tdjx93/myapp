@@ -24,6 +24,7 @@ import {LibrariansListComponent} from "./components/panel/librarians-list/librar
 import {BookComponent} from "./components/panel/book/book.component";
 import {AuthorComponent} from "./components/panel/author/author.component";
 import {NewUsersComponent} from "./components/panel/new-users/new-users.component";
+import {SearchResultComponent} from "./components/panel/search-result/search-result.component";
 
 const routes: Routes = [
   {
@@ -47,6 +48,7 @@ const routes: Routes = [
       {path: 'books/:title', component: BookComponent},
       {path: 'authors/:name', component: AuthorComponent},
       {path: 'new-users', component: NewUsersComponent, canActivate: [IsAdminGuard]},
+      {path: 'search-result/:keyWord', component: SearchResultComponent},
     ]
   },
   {path: 'registration', component: UserRegistrationComponent},

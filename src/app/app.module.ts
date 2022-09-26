@@ -28,6 +28,7 @@ import { LibrariansListComponent } from './components/panel/librarians-list/libr
 import { BookComponent } from './components/panel/book/book.component';
 import { AuthorComponent } from './components/panel/author/author.component';
 import { NewUsersComponent } from './components/panel/new-users/new-users.component';
+import { SearchResultComponent } from './components/panel/search-result/search-result.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { NewUsersComponent } from './components/panel/new-users/new-users.compon
     BookComponent,
     AuthorComponent,
     NewUsersComponent,
+    SearchResultComponent,
   ],
   imports: [
     BrowserModule,
