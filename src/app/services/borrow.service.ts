@@ -12,11 +12,19 @@ export class BorrowService {
   }
 
   createBorrow(borrowData: any) {
-    return this.httpClient.post(this.url, borrowData);
+    return this.httpClient.post('api/borrows/borrow', borrowData);
   }
 
   getActiveBorrows() {
     return this.httpClient.get("api/borrows/active");
+  }
+
+  getAllBorrows() {
+    return this.httpClient.get('/api/borrows/')
+  }
+
+  getBorrowListByCurrentUser() {
+    return this.httpClient.get('/api/borrows/me');
   }
 
   returnBook(returnData: any) {

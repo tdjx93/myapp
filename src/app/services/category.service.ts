@@ -5,12 +5,12 @@ import {HttpClient} from "@angular/common/http";
   providedIn: 'root'
 })
 export class CategoryService {
-  private url = "/api/book-categories"
+  private url = "/api/book-categories/"
 
   constructor(private httpClient: HttpClient) {
   }
 
-  getCategories() {
+  getAll() {
     return this.httpClient.get(this.url);
   }
 

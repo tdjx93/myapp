@@ -8,22 +8,17 @@
   <th class="table-th">Available</th>
   </thead>
   <tbody>
-  <tr *ngFor="let book of filteredBooks">
+  <tr *ngFor="let book of requestedBooks">
     <td class="table-td">{{book.id}}</td>
     <td class="table-td"><a routerLink="/books/{{book.title}}/">{{book.title}}</a></td>
     <td class="table-td"><a routerLink="/authors/{{book.authorName}}">{{book.authorName}}</a></td>
     <td class="table-td">{{book.isbn}}</td>
-    <td class="table-td"><a routerLink="/books-by-category/{{book.bookCategoryName}}/">{{book.bookCategoryName}}</a>
-    </td>
+    <td class="table-td"><a routerLink="/books-by-category/{{book.bookCategoryName}}/">{{book.bookCategoryName}}</a></td>
     <td class="table-td">{{book.availabilityStatus}}</td>
   </tr>
   </tbody>
 </table>
 
-<button
-  (click)="showOnlyAvailable = !showOnlyAvailable"
-  [ngClass]="showOnlyAvailable ? 'active' : ''"
->
-  Show only available Books
-</button>
-
+<form (ngSubmit)="requestBook()">
+  <button type="submit">Confirm</button>
+</form>

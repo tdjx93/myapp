@@ -14,7 +14,7 @@ export class LibrariansListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.userService.getByRole(this.LIBRARIANS)
+    this.userService.getAllByRole(this.LIBRARIANS)
       .subscribe(response => this.librarians = response)
   }
 

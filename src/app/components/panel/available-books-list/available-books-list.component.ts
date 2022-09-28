@@ -8,19 +8,13 @@ import {BookService} from "../../../services/book.service";
 })
 export class AvailableBooksListComponent implements OnInit {
   availableBooks: any;
-  page: any;
-  pageSize: any;
+  private param = "available_only";
+  private paramValue = true;
 
-  constructor(private bookService: BookService) {
-  }
+  constructor(private bookService: BookService) {  }
 
   ngOnInit(): void {
-    this.page = 1;
-   this.pageSize = 2;
-
-    this.bookService.getAvailable()
-      .subscribe(response => {
-        this.availableBooks = response;
-      })
+    this.bookService.getByParam(this.param, this.paramValue)
+      .subscribe(response => this.availableBooks = response)
   }
 }

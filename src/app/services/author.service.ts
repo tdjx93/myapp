@@ -10,7 +10,7 @@ export class AuthorService {
   }
 
   get() {
-    return this.httpClient.get('/api/authors')
+    return this.httpClient.get('/api/authors/')
   }
 
   getByName(name: any) {
@@ -18,6 +18,6 @@ export class AuthorService {
   }
 
   createAuthor(authorData: any) {
-    return this.httpClient.post('/api/authors', authorData)
+    return this.httpClient.post('/api/authors/', authorData)
   }
 }

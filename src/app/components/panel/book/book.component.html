@@ -1,22 +1,29 @@
-<h1>{{book.title}}</h1>
-<p>Opis .. </p>
-<table class="table">
-  <thead>
-  <th class="table-th">ID</th>
-  <th class="table-th">Tytuł</th>
-  <th class="table-th">Autor</th>
-  <th class="table-th">ISBN</th>
-  <th class="table-th">Category</th>
-  <th class="table-th">Available</th>
-  </thead>
-  <tbody>
-  <tr>
-    <td class="table-td">{{book.id}}</td>
-    <td class="table-td">{{book.title}}</td>
-    <td class="table-td"><a routerLink="/authors/{{book.authorName}}/">{{book.authorName}}</a> </td>
-    <td class="table-td">{{book.isbn}}</td>
-    <td class="table-td"><a routerLink="/books-by-category/{{book.bookCategoryName}}/">{{book.bookCategoryName}}</a></td>
-    <td class="table-td">{{book.availabilityStatus}}</td>
-  </tr>
-  </tbody>
-</table>
+<div *ngIf="!book">
+  <h2>Niepoprawny tytuł książki: '{{paramValue}}'</h2>
+</div>
+
+<div *ngIf="book">
+  <h1>{{book.title}}</h1>
+  <p>Opis .. </p>
+  <table class="table">
+    <thead>
+    <th class="table-th">ID</th>
+    <th class="table-th">Tytuł</th>
+    <th class="table-th">Autor</th>
+    <th class="table-th">ISBN</th>
+    <th class="table-th">Category</th>
+    <th class="table-th">Available</th>
+    </thead>
+    <tbody>
+    <tr>
+      <td class="table-td">{{book.id}}</td>
+      <td class="table-td">{{book.title}}</td>
+      <td class="table-td"><a routerLink="/authors/{{book.authorName}}/">{{book.authorName}}</a> </td>
+      <td class="table-td">{{book.isbn}}</td>
+      <td class="table-td"><a routerLink="/books-by-category/{{book.bookCategoryName}}/">{{book.bookCategoryName}}</a></td>
+      <td class="table-td">{{book.availabilityStatus}}</td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>

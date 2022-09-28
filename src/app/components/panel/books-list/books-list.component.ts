@@ -9,13 +9,14 @@ import {BookService} from "../../../services/book.service";
 export class BooksListComponent implements OnInit {
   books: any;
   showOnlyAvailable: boolean
-  defaultPage: any
-  defaultPageSize: any
-  totalPages: any
-  numberArray: any
 
   constructor(private bookService: BookService) {
     this.showOnlyAvailable = false
+  }
+
+  ngOnInit() {
+    this.bookService.getAll()
+      .subscribe(response => this.books = response);
   }
 
   get filteredBooks() {
@@ -24,26 +25,5 @@ export class BooksListComponent implements OnInit {
     } else {
       return this.books.filter(book => book.availabilityStatus === true)
     }
-  }
-
-  ngOnInit() {
-    this.defaultPage = 1;
-    this.defaultPageSize = 5;
-
-    this.bookService.get(this.defaultPage, this.defaultPageSize)
-      .subscribe(response => {
-        this.books = response.content;
-        this.totalPages = response.totalPages;
-        this.numberArray = this.numberSequence(this.totalPages)
-      })
-  }
-
-  numberSequence(n: number): Array<number> {
-    return Array(n);
-  }
-
-  loadPage(page: number) {
-    this.bookService.get(page, this.defaultPageSize)
-      .subscribe(response => this.books = response.content)
   }
 }

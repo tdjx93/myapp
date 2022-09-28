@@ -29,6 +29,9 @@ import { BookComponent } from './components/panel/book/book.component';
 import { AuthorComponent } from './components/panel/author/author.component';
 import { NewUsersComponent } from './components/panel/new-users/new-users.component';
 import { SearchResultComponent } from './components/panel/search-result/search-result.component';
+import { BorrowConfirmationComponent } from './components/panel/borrow-confirmation/borrow-confirmation.component';
+import { BorrowsListComponent } from './components/panel/borrows-list/borrows-list.component';
+import { BookListPageComponent } from './components/panel/book-list-page/book-list-page.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +59,9 @@ import { SearchResultComponent } from './components/panel/search-result/search-r
     AuthorComponent,
     NewUsersComponent,
     SearchResultComponent,
+    BorrowConfirmationComponent,
+    BorrowsListComponent,
+    BookListPageComponent,
   ],
   imports: [
     BrowserModule,

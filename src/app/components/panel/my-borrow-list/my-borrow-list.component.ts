@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {ReaderService} from "../../../services/reader.service";
+import {BorrowService} from "../../../services/borrow.service";
 
 @Component({
   selector: 'app-borrower-history-list',
@@ -10,13 +10,13 @@ import {ReaderService} from "../../../services/reader.service";
 export class MyBorrowListComponent implements OnInit {
   history: any;
 
-  constructor(private borrowerService: ReaderService,
-              private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute,
+              private borrowService: BorrowService) {
   }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      this.borrowerService.getMyBorrowList()
+      this.borrowService.getBorrowListByCurrentUser()
         .subscribe(response => this.history = response)
     });
     // this.route.params.subscribe(params => {

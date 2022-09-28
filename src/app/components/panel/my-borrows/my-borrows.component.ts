@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {UserService} from "../../../services/user.service";
-import {ReaderService} from "../../../services/reader.service";
+import {BorrowService} from "../../../services/borrow.service";
 
 @Component({
   selector: 'app-my-borrows',
@@ -10,12 +10,12 @@ import {ReaderService} from "../../../services/reader.service";
 export class MyBorrowsComponent implements OnInit {
   myBorrows: any;
 
-  constructor(private borrowerService: ReaderService,
-              private userService: UserService) {
+  constructor(private userService: UserService,
+              private borrowService: BorrowService) {
   }
 
   ngOnInit(): any {
-    this.borrowerService.getHistoryByUsername(this.userService.getMe().email)
+    this.borrowService.getBorrowListByCurrentUser()
       .subscribe(response => this.myBorrows = response);
   }
 

@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {ReaderService} from "../../../services/reader.service";
 import {UserService} from "../../../services/user.service";
 
 @Component({
@@ -15,7 +14,7 @@ export class ReadersListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.userService.getByRole(this.READERS)
+    this.userService.getAllByRole(this.READERS)
       .subscribe(response => this.readers = response)
   }
 

@@ -11,7 +11,7 @@ export class UserService {
   }
 
   register(userData: any) {
-    return this.httpClient.post('/api/register', userData);
+    return this.httpClient.post('/api/users/register', userData);
   }
 
   login(userData: any): any {
@@ -22,20 +22,24 @@ export class UserService {
     sessionStorage.removeItem('token');
   };
 
-  getMe(): any {
-    return this.httpClient.get('/api/me');
+  getProfileData(): any {
+    return this.httpClient.get('/api/users/me');
   }
 
-  updateProfile(updatedUserData: any): any {
-    return this.httpClient.post('/api/profile', updatedUserData);
+  updateProfileData(updatedUserData: any): any {
+    return this.httpClient.post('/api/users/profile', updatedUserData);
   }
 
   isAuthenticated(): boolean {
     return this.authenticationService.isAuthenticated();
   }
 
-  getByRole(role: any): any {
-    return this.httpClient.get('/api/' + role)
+  getAllByRole(role: any): any {
+    return this.httpClient.get('/api/users/' + role)
+  }
+
+  getById(id: any): any {
+    return this.httpClient.get('/api/users/' + id)
   }
 
 }

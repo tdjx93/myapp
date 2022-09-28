@@ -1,0 +1,26 @@
+<table class="table">
+  <thead>
+  <th class="table-th">ID</th>
+  <th class="table-th">Book title</th>
+  <th class="table-th">Book author</th>
+  <th class="table-th">Borrow date</th>
+  <th class="table-th">Return date</th>
+  <th class="table-th">Is returned</th>
+  <th class="table-th">Reader ID</th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let borrow of borrows">
+    <td class="table-td">{{borrow.id}}</td>
+    <td class="table-td">{{borrow.bookTitle}}</td>
+    <td class="table-td">{{borrow.authorName}}</td>
+    <td class="table-td">{{borrow.borrowDate}}</td>
+    <td class="table-td">{{borrow.returnDate}}</td>
+    <td class="table-td">{{borrow.returned}}</td>
+    <td class="table-td">{{borrow.reader}}</td>
+  </tr>
+  </tbody>
+</table>
+
+<div>
+  <h4>Liczba wypożyczeń: ({{borrows?.length}})</h4>
+</div>

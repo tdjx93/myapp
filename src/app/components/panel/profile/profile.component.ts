@@ -22,12 +22,12 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.userService.getMe()
+    this.userService.getProfileData()
       .subscribe(response => this.form = response)
   }
 
   updateProfile() {
-    this.userService.updateProfile(this.form)
+    this.userService.updateProfileData(this.form)
       .subscribe(result => {
         console.log('User profile updated')
         this.router.navigate(['/profile'])

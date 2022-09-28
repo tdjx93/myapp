@@ -47,7 +47,7 @@ export class NewBookComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.categoryService.getCategories()
+    this.categoryService.getAll()
       .subscribe(response => this.categories = response)
     this.authorService.get()
       .subscribe(response => this.authors = response)

@@ -11,6 +11,7 @@ import {BookService} from "../../../services/book.service";
 export class AuthorComponent implements OnInit {
   author: any;
   authorBooks: any;
+  private param = "author"
 
   constructor(private authorService: AuthorService,
               private bookService: BookService,
@@ -21,8 +22,7 @@ export class AuthorComponent implements OnInit {
     let authorName = routeParams.get('name');
     this.authorService.getByName(authorName)
       .subscribe(response => this.author = response);
-    this.bookService.getByAuthor(authorName)
+    this.bookService.getByParam(this.param, authorName)
       .subscribe(response => this.authorBooks = response);
   }
-
 }

@@ -25,6 +25,9 @@ import {BookComponent} from "./components/panel/book/book.component";
 import {AuthorComponent} from "./components/panel/author/author.component";
 import {NewUsersComponent} from "./components/panel/new-users/new-users.component";
 import {SearchResultComponent} from "./components/panel/search-result/search-result.component";
+import {BorrowConfirmationComponent} from "./components/panel/borrow-confirmation/borrow-confirmation.component";
+import {BorrowsListComponent} from "./components/panel/borrows-list/borrows-list.component";
+import {BookListPageComponent} from "./components/panel/book-list-page/book-list-page.component";
 
 const routes: Routes = [
   {
@@ -33,13 +36,16 @@ const routes: Routes = [
       {path: 'librarians', component: LibrariansListComponent, canActivate: [IsAdminGuard]},
       {path: 'readers', component: ReadersListComponent, canActivate: [IsLibrarianGuard]},    // MULTIPLE GUARDS DO NOT WORK
       {path: 'books', component: BooksListComponent},
+      {path: 'books-page', component: BookListPageComponent},
       {path: 'new-book', component: NewBookComponent},
       {path: 'books-available', component: AvailableBooksListComponent},
       {path: 'books-by-category', component: BooksListByCategoryComponent},
       {path: 'books-by-category/:category', component: BooksListByCategoryComponent},
       {path: 'return-book', component: ReturnBookComponent},
       {path: 'my-borrow-list', component: MyBorrowListComponent},
+      {path: 'borrows', component: BorrowsListComponent},
       {path: 'new-borrow', component: NewBorrowComponent},
+      {path: 'new-borrow/confirm', component: BorrowConfirmationComponent},
       {path: 'categories', component: CategoriesListComponent},
       {path: 'new-category', component: NewCategoryComponent},
       {path: 'authors', component: AuthorsListComponent},
@@ -48,6 +54,7 @@ const routes: Routes = [
       {path: 'books/:title', component: BookComponent},
       {path: 'authors/:name', component: AuthorComponent},
       {path: 'new-users', component: NewUsersComponent, canActivate: [IsAdminGuard]},
+      {path: 'search-result', component: SearchResultComponent},
       {path: 'search-result/:keyWord', component: SearchResultComponent},
     ]
   },

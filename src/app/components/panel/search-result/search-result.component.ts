@@ -9,6 +9,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 })
 export class SearchResultComponent implements OnInit {
   resultBooks: any;
+  param = "search"
   keyWord: any;
 
   constructor(private bookService: BookService,
@@ -19,7 +20,7 @@ export class SearchResultComponent implements OnInit {
   ngOnInit(): void {
     let routeParams = this.activatedRoute.snapshot.paramMap;
     this.keyWord = routeParams.get("keyWord");
-    this.bookService.getByKeyWord(this.keyWord)
+    this.bookService.getByParam(this.param, this.keyWord)
       .subscribe(response => this.resultBooks = response);
   }
 

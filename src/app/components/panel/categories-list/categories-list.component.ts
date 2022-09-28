@@ -12,7 +12,7 @@ export class CategoriesListComponent implements OnInit {
   constructor(private categoryService: CategoryService) { }
 
   ngOnInit(): void {
-    this.categoryService.getCategories()
+    this.categoryService.getAll()
       .subscribe(response => this.categories = response)
   }
 

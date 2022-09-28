@@ -10,7 +10,6 @@ export class ReturnBookComponent implements OnInit {
   activeBorrows: any;
   form = {
     bookId: null,
-    borrowerId: null
   }
   errors: any
 

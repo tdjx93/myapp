@@ -12,6 +12,7 @@ export class BooksListByCategoryComponent implements OnInit {
   books: any;
   categories: any;
   selectedCategoryName: number | null;
+  param = "category";
 
 
   constructor(private bookService: BookService,
@@ -21,7 +22,7 @@ export class BooksListByCategoryComponent implements OnInit {
   }
 
   loadBooks(): void {
-    this.bookService.getByCategoryName(this.selectedCategoryName)
+    this.bookService.getByParam(this.param, this.selectedCategoryName)
       .subscribe(response => this.books = response)
   }
 
@@ -29,12 +30,11 @@ export class BooksListByCategoryComponent implements OnInit {
     let paramMap = this.route.snapshot.paramMap;
     let category = paramMap.get('category');
     if (category)
-      this.bookService.getByCategoryName(category)
+      this.bookService.getByParam(this.param, category)
         .subscribe(response => this.books = response);
 
-    this.categoryService.getCategories()
+    this.categoryService.getAll()
       .subscribe(response => this.categories = response);
-
   }
 
 }

@@ -8,7 +8,7 @@
   <th class="table-th">Available</th>
   </thead>
   <tbody>
-  <tr *ngFor="let book of filteredBooks">
+  <tr *ngFor="let book of books">
     <td class="table-td">{{book.id}}</td>
     <td class="table-td"><a routerLink="/books/{{book.title}}/">{{book.title}}</a></td>
     <td class="table-td"><a routerLink="/authors/{{book.authorName}}">{{book.authorName}}</a></td>
@@ -20,10 +20,19 @@
   </tbody>
 </table>
 
-<button
-  (click)="showOnlyAvailable = !showOnlyAvailable"
-  [ngClass]="showOnlyAvailable ? 'active' : ''"
->
-  Show only available Books
-</button>
+<p></p>
+
+<div class="center">
+  <div class="pagination">
+    <a>Page: </a>
+    <a><<</a>
+    <a
+      (click)="loadPage(i+1)"
+      *ngFor="let number of numberArray; let i = index">
+      ({{ i + 1 }})
+    </a>
+    <a>>></a>
+  </div>
+</div>
+
 

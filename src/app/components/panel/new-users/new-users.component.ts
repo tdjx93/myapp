@@ -13,7 +13,7 @@ export class NewUsersComponent implements OnInit {
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
-    this.userService.getByRole(this.NEW_USERS)
+    this.userService.getAllByRole(this.NEW_USERS)
       .subscribe(response => this.newUsers = response);
   }
 

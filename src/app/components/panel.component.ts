@@ -20,7 +20,7 @@ export class PanelComponent {
   }
 
   ngOnInit() {
-    this.userService.getMe()
+    this.userService.getProfileData()
       .subscribe(response => {
         this.me = response;
         this.authentication.me = response;
